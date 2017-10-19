@@ -162,7 +162,7 @@ $('div.bg-parallax').each(function() {
 $(document).ready(
     function() {
 
-    $('html').niceScroll({
+    $(".global-wrap").niceScroll({
         cursorcolor: "#000",
         cursorborder: "0px solid #fff",
         railpadding: {
