@@ -140,8 +140,6 @@
         </div>
         <!-- END TOP AREA  -->
         
-    
-    <div class="gap"></div>
 
         
         <div class="container">
@@ -405,6 +403,8 @@
             </div>
             <div class="gap gap-small"></div>
         </div>
+		
+		
         <div class="bg-holder">
             <div class="bg-mask"></div>
             <div class="bg-img" style="background-image:url(img/2048x1293.png);"></div>
@@ -435,80 +435,7 @@
             <div class="gap"></div>
             <h2 class="text-center">Top Destinations</h2>
             <div class="gap">
-                <div class="row row-wrap">
-                    <div class="col-md-3">
-                        <div class="thumb">
-                            <header class="thumb-header">
-                                <a class="hover-img curved" href="#">
-                                    <img src="img/800x600.png" alt="Image Alternative text" title="196_365" />
-                                </a>
-                            </header>
-                            <div class="img-left">
-                                <img src="img/flags/32/fr.png" alt="Image Alternative text" title="Image Title" />
-                            </div>
-                            <div class="thumb-caption">
-                                <h4 class="thumb-title"><a class="text-darken" href="#">Paris</a></h4>
-                                <div class="thumb-caption">
-                                    <p class="thumb-desc">Nullam potenti ac sagittis iaculis justo</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="thumb">
-                            <header class="thumb-header">
-                                <a class="hover-img curved" href="#">
-                                    <img src="img/800x600.png" alt="Image Alternative text" title="El inevitable paso del tiempo" />
-                                </a>
-                            </header>
-                            <div class="img-left">
-                                <img src="img/flags/32/hu.png" alt="Image Alternative text" title="Image Title" />
-                            </div>
-                            <div class="thumb-caption">
-                                <h4 class="thumb-title"><a class="text-darken" href="#">Budapest</a></h4>
-                                <div class="thumb-caption">
-                                    <p class="thumb-desc">Sociis interdum sed a senectus porta</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="thumb">
-                            <header class="thumb-header">
-                                <a class="hover-img curved" href="#">
-                                    <img src="img/800x600.png" alt="Image Alternative text" title="Upper Lake in New York Central Park" />
-                                </a>
-                            </header>
-                            <div class="img-left">
-                                <img src="img/flags/32/us.png" alt="Image Alternative text" title="Image Title" />
-                            </div>
-                            <div class="thumb-caption">
-                                <h4 class="thumb-title"><a class="text-darken" href="#">New York</a></h4>
-                                <div class="thumb-caption">
-                                    <p class="thumb-desc">Erat ultricies auctor tellus natoque cursus</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="thumb">
-                            <header class="thumb-header">
-                                <a class="hover-img curved" href="#">
-                                    <img src="img/800x600.png" alt="Image Alternative text" title="people on the beach" />
-                                </a>
-                            </header>
-                            <div class="img-left">
-                                <img src="img/flags/32/gr.png" alt="Image Alternative text" title="Image Title" />
-                            </div>
-                            <div class="thumb-caption">
-                                <h4 class="thumb-title"><a class="text-darken" href="#">Crete</a></h4>
-                                <div class="thumb-caption">
-                                    <p class="thumb-desc">Sri Lankan jobs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
 
 
