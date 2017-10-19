@@ -1865,7 +1865,7 @@ body {
 }
 .top-area,
 .special-area {
-  height: 700px;
+  height: 400px;
   position: relative;
   overflow: hidden;
 }
