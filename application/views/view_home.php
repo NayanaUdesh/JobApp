@@ -133,6 +133,53 @@
                                     </div>
                                 </div>
                             </div>
+							
+							<div class="row">
+								<div class="col-md-3">
+									<ul class="job-category">
+										<li><a href="" >Software Engineer Dev - IT <span>(503)</span></a></li>
+										<li><a href="" >Quality Assuarance - IT <span>(503)</span></a></li>
+										<li><a href="" >Networking - IT<span>(503)</span></a></li>
+										<li><a href="" >Hardware - IT <span>(503)</span></a></li>
+										<li><a href="" >Banking & Insurance<span>(503)</span></a></li>
+										<li><a href="" >HR & Recruitment <span>(503)</span></a></li>
+										<li><a href="" >Accounting & Finance <span>(503)</span></a></li>
+									</ul>
+								</div>
+								<div class="col-md-3">
+									<ul class="job-category">
+										<li><a href="" >Civil Engineer <span>(503)</span></a></li>
+										<li><a href="" >Architect <span>(503)</span></a></li>
+										<li><a href="" >Tourism & Hospitality <span>(503)</span></a></li>
+										<li><a href="" >Apperal/ Clothing <span>(503)</span></a></li>
+										<li><a href="" >Mechanical Engineer <span>(503)</span></a></li>
+										<li><a href="" >Security <span>(503)</span></a></li>
+										<li><a href="" >Fashion Design & Beauty <span>(503)</span></a></li>
+									</ul>
+								</div>
+								<div class="col-md-3">
+									<ul class="job-category">
+										<li><a href="" >Public & Customer Relations <span>(503)</span></a></li>
+										<li><a href="" >Electrician <span>(503)</span></a></li>
+										<li><a href="" >Manufacturing <span>(503)</span></a></li>
+										<li><a href="" >Quality Control <span>(503)</span></a></li>
+										<li><a href="" >Imports & Exports <span>(503)</span></a></li>
+										<li><a href="" >Agriculture & Environment <span>(503)</span></a></li>
+										<li><a href="" >Office Admin <span>(503)</span></a></li>
+									</ul>
+								</div>
+								<div class="col-md-3">
+									<ul class="job-category">
+										<li><a href="" >Sales & Marketing <span>(503)</span></a></li>
+										<li><a href="" >Media & Communication <span>(503)</span></a></li>
+										<li><a href="" >Hospital & Nursing <span>(503)</span></a></li>
+										<li><a href="" >Teaching <span>(503)</span></a></li>
+										<li><a href="" >Transport & Ticketing <span>(503)</span></a></li>
+										<li><a href="" >Sports & Fitness <span>(503)</span></a></li>
+										<li><a href="" >Other <span>(503)</span></a></li>
+									</ul>
+								</div>
+							</div>
                         </div>
                     </div>
                 </div>
@@ -140,269 +187,181 @@
         </div>
         <!-- END TOP AREA  -->
         
+	<div class="gap gap-small"></div>
 
-        
+	<div class="bg-holder" style="background-color:rgba(177, 154, 168, 0.3); padding-top:15px;">
         <div class="container">
             <div class="row">
-                <div class="col-md-10">
-                    <div class="row row-wrap">
-                        <div class="search-tabs">
-                            <div class="tabbable">
-                                <ul class="nav nav-tabs" id="myTab">
-                                    <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-building-o"></i> <span >Recent Jobs</span></a>
-                                    </li>
-                                    <li><a href="#tab-2" data-toggle="tab"><i class="fa fa-plane"></i> <span >Trending</span></a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-pane fade in active" id="tab-1">
-                                        <form>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
-                                                        <label>Where are you going?</label>
-                                                        <input class="typeahead form-control" placeholder="City, Airport, Point of Interest or U.S. Zip Code" type="text" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <div class="input-daterange" data-date-format="M d, D">
-                                                        <div class="row">
-                                                            <div class="col-md-3">
-                                                                <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
-                                                                    <label>Check-in</label>
-                                                                    <input class="form-control" name="start" type="text" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
-                                                                    <label>Check-out</label>
-                                                                    <input class="form-control" name="end" type="text" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-group form-group-lg form-group-select-plus">
-                                                                    <label>Rooms</label>
-                                                                    <div class="btn-group btn-group-select-num" data-toggle="buttons">
-                                                                        <label class="btn btn-primary active">
-                                                                            <input type="radio" name="options" />1</label>
-                                                                        <label class="btn btn-primary">
-                                                                            <input type="radio" name="options" />2</label>
-                                                                        <label class="btn btn-primary">
-                                                                            <input type="radio" name="options" />3</label>
-                                                                        <label class="btn btn-primary">
-                                                                            <input type="radio" name="options" />3+</label>
-                                                                    </div>
-                                                                    <select class="form-control hidden">
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                        <option selected="selected">4</option>
-                                                                        <option>5</option>
-                                                                        <option>6</option>
-                                                                        <option>7</option>
-                                                                        <option>8</option>
-                                                                        <option>9</option>
-                                                                        <option>10</option>
-                                                                        <option>11</option>
-                                                                        <option>12</option>
-                                                                        <option>13</option>
-                                                                        <option>14</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-group form-group-lg form-group-select-plus">
-                                                                    <label>Guests</label>
-                                                                    <div class="btn-group btn-group-select-num" data-toggle="buttons">
-                                                                        <label class="btn btn-primary active">
-                                                                            <input type="radio" name="options" />1</label>
-                                                                        <label class="btn btn-primary">
-                                                                            <input type="radio" name="options" />2</label>
-                                                                        <label class="btn btn-primary">
-                                                                            <input type="radio" name="options" />3</label>
-                                                                        <label class="btn btn-primary">
-                                                                            <input type="radio" name="options" />3+</label>
-                                                                    </div>
-                                                                    <select class="form-control hidden">
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                        <option selected="selected">4</option>
-                                                                        <option>5</option>
-                                                                        <option>6</option>
-                                                                        <option>7</option>
-                                                                        <option>8</option>
-                                                                        <option>9</option>
-                                                                        <option>10</option>
-                                                                        <option>11</option>
-                                                                        <option>12</option>
-                                                                        <option>13</option>
-                                                                        <option>14</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="btn btn-primary btn-lg" type="submit">Search for Hotels</button>
-                                        </form>
-                                    </div>
-                                    <div class="tab-pane fade" id="tab-2">
-                                        <form>
-                                            <div class="tabbable">
-                                                <ul class="nav nav-pills nav-sm nav-no-br mb10" id="flightChooseTab">
-                                                    <li class="active"><a href="#flight-search-1" data-toggle="tab">Round Trip</a>
-                                                    </li>
-                                                    <li><a href="#flight-search-2" data-toggle="tab">One Way</a>
-                                                    </li>
-                                                </ul>
-                                                <div class="tab-content">
-                                                    <div class="tab-pane fade in active" id="flight-search-1">
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
-                                                                            <label>From</label>
-                                                                            <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" />
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
-                                                                            <label>To</label>
-                                                                            <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="input-daterange" data-date-format="M d, D">
-                                                                    <div class="row">
-                                                                        <div class="col-md-4">
-                                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
-                                                                                <label>Departing</label>
-                                                                                <input class="form-control" name="start" type="text" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-4">
-                                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
-                                                                                <label>Returning</label>
-                                                                                <input class="form-control" name="end" type="text" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-4">
-                                                                            <div class="form-group form-group-lg form-group-select-plus">
-                                                                                <label>Passngers</label>
-                                                                                <div class="btn-group btn-group-select-num" data-toggle="buttons">
-                                                                                    <label class="btn btn-primary active">
-                                                                                        <input type="radio" name="options" />1</label>
-                                                                                    <label class="btn btn-primary">
-                                                                                        <input type="radio" name="options" />2</label>
-                                                                                    <label class="btn btn-primary">
-                                                                                        <input type="radio" name="options" />3</label>
-                                                                                    <label class="btn btn-primary">
-                                                                                        <input type="radio" name="options" />3+</label>
-                                                                                </div>
-                                                                                <select class="form-control hidden">
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
-                                                                                    <option selected="selected">4</option>
-                                                                                    <option>5</option>
-                                                                                    <option>6</option>
-                                                                                    <option>7</option>
-                                                                                    <option>8</option>
-                                                                                    <option>9</option>
-                                                                                    <option>10</option>
-                                                                                    <option>11</option>
-                                                                                    <option>12</option>
-                                                                                    <option>13</option>
-                                                                                    <option>14</option>
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tab-pane fade" id="flight-search-2">
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
-                                                                            <label>From</label>
-                                                                            <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" />
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
-                                                                            <label>To</label>
-                                                                            <input class="typeahead form-control" placeholder="City, Airport, U.S. Zip" type="text" />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="input-daterange" data-date-format="M d, D">
-                                                                    <div class="row">
-                                                                        <div class="col-md-4">
-                                                                            <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
-                                                                                <label>Departing</label>
-                                                                                <input class="date-pick form-control" data-date-format="M d, D" type="text" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-4">
-                                                                            <div class="form-group form-group-lg form-group-select-plus">
-                                                                                <label>Passngers</label>
-                                                                                <div class="btn-group btn-group-select-num" data-toggle="buttons">
-                                                                                    <label class="btn btn-primary active">
-                                                                                        <input type="radio" name="options" />1</label>
-                                                                                    <label class="btn btn-primary">
-                                                                                        <input type="radio" name="options" />2</label>
-                                                                                    <label class="btn btn-primary">
-                                                                                        <input type="radio" name="options" />3</label>
-                                                                                    <label class="btn btn-primary">
-                                                                                        <input type="radio" name="options" />3+</label>
-                                                                                </div>
-                                                                                <select class="form-control hidden">
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
-                                                                                    <option selected="selected">4</option>
-                                                                                    <option>5</option>
-                                                                                    <option>6</option>
-                                                                                    <option>7</option>
-                                                                                    <option>8</option>
-                                                                                    <option>9</option>
-                                                                                    <option>10</option>
-                                                                                    <option>11</option>
-                                                                                    <option>12</option>
-                                                                                    <option>13</option>
-                                                                                    <option>14</option>
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="btn btn-primary btn-lg" type="submit">Search for Flights</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+					<div class="col-md-8">
+						<h4><i class="glyphicon glyphicon-briefcase"></i> Recent Job</h4>
+						<div id="tab-container" class="tab-container" data-easytabs="true"><!-- Start Tabs -->
+							<ul class="etabs clearfix">
+								<li class="tab active"><a href="#all" class="active">All</a></li>
+								<li class="tab"><a href="#contract">Contract</a></li>
+								<li class="tab"><a href="#full">Full Time</a></li>
+								<li class="tab"><a href="#free">Freelence</a></li>
+							</ul>
+							<div class="panel-container">
+								<div id="all" style="display: block;" class="active"><!-- Tabs section 1 -->
+								
+									<div class="recent-job-list-home"><!-- Tabs content -->
+										<div class="job-list-logo col-md-1 ">
+											<img src="<?php echo base_url("assets/img/company-1-post.png");?>" class="img-responsive" alt="dummy-joblist">
+										</div>
+										<div class="col-md-6 job-list-desc">
+											<h6>Store General Manager</h6>
+											<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
+										</div>
+										<div class="col-md-5 full-tab">
+											<div class="row">
+												<div class="job-list-location col-md-7 ">
+													<h6><i class="fa fa-map-marker"></i>San Fransisco</h6>
+												</div>
+												<div class="job-list-type col-md-5 ">
+													<h6><i class="fa fa-user"></i>Full Time</h6>
+												</div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div><!-- Tabs content -->
+									
+									<div class="recent-job-list-home"><!-- Tabs content -->
+										<div class="job-list-logo col-md-1 ">
+											<img src="<?php echo base_url("assets/img/company-2-post.png");?>" class="img-responsive" alt="dummy-joblist">
+										</div>
+										<div class="col-md-6 job-list-desc">
+											<h6>Department Head</h6>
+											<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
+										</div>
+										<div class="col-md-5 full-tab">
+											<div class="row">
+												<div class="job-list-location col-md-7 ">
+													<h6><i class="fa fa-map-marker"></i>Denver</h6>
+												</div>
+												<div class="job-list-type col-md-5 ">
+													<h6><i class="fa fa-user"></i>Full Time</h6>
+												</div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div><!-- Tabs content -->
+									
+									<div class="recent-job-list-home"><!-- Tabs content -->
+										<div class="job-list-logo col-md-1 ">
+											<img src="<?php echo base_url("assets/img/company-1-post.png");?>" class="img-responsive" alt="dummy-joblist">
+										</div>
+										<div class="col-md-6 job-list-desc">
+											<h6>Marketing</h6>
+											<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
+										</div>
+										<div class="col-md-5 full-tab">
+											<div class="row">
+												<div class="job-list-location col-md-7 ">
+													<h6><i class="fa fa-map-marker"></i>Washington</h6>
+												</div>
+												<div class="job-list-type col-md-5 ">
+													<h6><i class="fa fa-user"></i>Part Time</h6>
+												</div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div><!-- Tabs content -->
+									
+									<div class="recent-job-list-home"><!-- Tabs content -->
+										<div class="job-list-logo col-md-1 ">
+											<img src="<?php echo base_url("assets/img/company-2-post.png");?>" class="img-responsive" alt="dummy-joblist">
+										</div>
+										<div class="col-md-6 job-list-desc">
+											<h6>General Manager</h6>
+											<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
+										</div>
+										<div class="col-md-5 full-tab">
+											<div class="row">
+												<div class="job-list-location col-md-7 ">
+													<h6><i class="fa fa-map-marker"></i>New York</h6>
+												</div>
+												<div class="job-list-type col-md-5 ">
+													<h6><i class="fa fa-user"></i>Full Time</h6>
+												</div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div><!-- Tabs content -->
+									
+									<div class="recent-job-list-home"><!-- Tabs content -->
+										<div class="job-list-logo col-md-1 ">
+											<img src="<?php echo base_url("assets/img/company-1-post.png");?>" class="img-responsive" alt="dummy-joblist">
+										</div>
+										<div class="col-md-6 job-list-desc">
+											<h6>Creative Designer</h6>
+											<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
+										</div>
+										<div class="col-md-5 full-tab">
+											<div class="row">
+												<div class="job-list-location col-md-7 ">
+													<h6><i class="fa fa-map-marker"></i>Los Angeles</h6>
+												</div>
+												<div class="job-list-type col-md-5 ">
+													<h6><i class="fa fa-user"></i>Full Time</h6>
+												</div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div><!-- Tabs content -->
+									
+									<div class="recent-job-list-home"><!-- Tabs content -->
+										<div class="job-list-logo col-md-1 ">
+											<img src="<?php echo base_url("assets/img/company-2-post.png");?>" class="img-responsive" alt="dummy-joblist">
+										</div>
+										<div class="col-md-6 job-list-desc">
+											<h6>Finance Head</h6>
+											<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
+										</div>
+										<div class="col-md-5 full-tab">
+											<div class="row">
+												<div class="job-list-location col-md-7 ">
+													<h6><i class="fa fa-map-marker"></i>Texas</h6>
+												</div>
+												<div class="job-list-type col-md-5 ">
+													<h6><i class="fa fa-user"></i>Full Time</h6>
+												</div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div><!-- Tabs content -->
+									
+								</div><!-- Tabs section 1 -->
+								
+							</div>
+						</div><!-- end Tabs -->
+						<div class="spacer-2"></div>
+					</div>
+					
+					<div class="col-md-4">
+						<div id="job-opening">
+							<div class="job-opening-top">
+								<div class="job-oppening-title">Top Job Opening</div>
+								<div class="job-opening-nav">
+									<a class="btn prev"></a>
+									<a class="btn next"></a>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<br>
+							<img src="<?php echo base_url("assets/img/300x300.png");?>" class="img-responsive" alt="dummy-joblist">
+						</div>
+
+						<div class="post-resume-title">Advertise Here</div>
+						<div class="post-resume-container">
+							
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
             <div class="gap gap-small"></div>
         </div>
+	</div>
 		
 		
         <div class="bg-holder">
