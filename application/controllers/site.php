@@ -68,8 +68,8 @@ if (!defined('BASEPATH'))
                 
                 return true;
             } else {
-                
-                $this->form_validation->set_message('validate', 'incorrect username or password');
+                $this->form_validation->set_error_delimiters('<div  style="color: Red;">', '</div>');
+                $this->form_validation->set_message('validate', 'Incorrect username or password. Check your credentials and try again.');
                
                 return false;
             }

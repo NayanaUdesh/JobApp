@@ -43,7 +43,7 @@
                             </a>
                         </div>
                       
-                        <div class="col-md-9">
+                        <div class="col-md-9" >
                             <div class="top-user-area clearfix">
                                 <ul class="top-user-area-list list list-horizontal list-border">
                                     <?php 
