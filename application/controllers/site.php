@@ -12,6 +12,74 @@ if (!defined('BASEPATH'))
         $this->load->view('view_home');
     }
 
+    public function Login(){
+        $this->load->view("view_reg");
+    }
+
+   function LoginValidation() {
+            $this->load->model('model_db');
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules("email", "email", 'required|trim|xss_clean|callback_validate');
+            $this->form_validation->set_rules("password", "Password", "required|trim");
+
+
+
+           // $name = $this->input->post('username');
+            //$fname = $this->model_db->getFirstName($name);
+
+            if ($this->form_validation->run() == TRUE) {
+              
+
+                $email=$this->input->post('email');
+                
+                $name=$this->model_db->getFirstName($email);
+
+                $icon=$this->model_db->getIcon($email);     
+                           
+               
+                $data = array(
+                    'email' => $this->input->post('email'),
+                    'is_logged_in' => 1,
+                    'welcome_name' => $name,
+                    'welcome_icon'=> $icon,
+
+                    
+                );
+                $this->session->set_userdata($data);
+                //echo 'test';
+
+                
+            }
+        
+
+            if($this->session->userdata('is_logged_in') ==1){
+                $this->load->view('view_home', $data);
+                
+            }else{
+                $this->load->view('view_reg');
+                
+            }
+        }
+
+
+         function validate() {
+            $this->load->model('model_db');
+            if ($this->model_db->can_log_in()) {
+                
+                return true;
+            } else {
+                
+                $this->form_validation->set_message('validate', 'incorrect username or password');
+               
+                return false;
+            }
+        }
+
+         public function logout() {
+            $this->session->sess_destroy();
+            //$this->load->view("view_home");
+            redirect('site/');
+        }
 
   function register() {
 
