@@ -87,9 +87,9 @@
             <div class="container">
                 <div class="nav">
                     <ul class="slimmenu" id="slimmenu">
-                        <li class="active"><a href="index.html">Home</a> </li>
+                        <li class="active"><a href="<?php echo base_url(); ?>">Home</a> </li>
                         <li><a href="success-payment.html">All Jobs</a> </li>
-                        <li><a href="feature-typography.html">Post Jobs</a> </li>
+                        <li><a href="<?php echo base_url(); ?>site/PostJob">Post Jobs</a> </li>
                         <li><a href="hotels.html">Advertise</a> </li>
                         <li><a href="flights.html">About Us</a> </li>
                         <li><a href="rentals.html">Contact Us</a> </li>
