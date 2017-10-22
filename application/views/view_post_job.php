@@ -87,9 +87,9 @@
             <div class="container">
                 <div class="nav">
                     <ul class="slimmenu" id="slimmenu">
-                        <li class="active"><a href="<?php echo base_url(); ?>">Home</a> </li>
+                        <li><a href="<?php echo base_url(); ?>">Home</a> </li>
                         <li><a href="success-payment.html">All Jobs</a> </li>
-                        <li><a href="<?php echo base_url(); ?>site/PostJob">Post Jobs</a> </li>
+                        <li class="active"><a href="<?php echo base_url(); ?>site/PostJob">Post Jobs</a> </li>
                         <li><a href="hotels.html">Advertise</a> </li>
                         <li><a href="flights.html">About Us</a> </li>
                         <li><a href="rentals.html">Contact Us</a> </li>
@@ -102,114 +102,173 @@
         
         
         <!-- TOP AREA -->
-        <div class="top-area show-onload">
-            <div class="bg-holder full">
-                <div class="bg-front full-height bg-front-mob-rel">
-                    <div class="container full-height">
-                        <div class="rel full-height">
-                            
-                            <div class="search-job">
-                                <div class="search-main">
-                                    <div class="content">
-                                        <br/>
-                                        <h1>Search Jobs</h1>
-                                        <form>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
-                                                        <label>Job Title / Designation</label>
-                                                        <input class="typeahead form-control" placeholder="Input keyword" type="text" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="input-daterange">
-                                                        <div class="row">
-                                                            <div class="col-md-5">
-                                                                <div class="form-group form-group-icon-left"><i class="fa fa-briefcase input-icon input-icon-highlight"></i>
-                                                                    <label>Job Category</label>
-                                                                    <input class="form-control" name="job_type" type="text" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group form-group-icon-left"><i class="fa fa-map-marker input-icon input-icon-highlight"></i>
-                                                                    <label>Job Location</label>
-                                                                    <select class="form-control" name="location">                                                                   
-                                                                        <option>All</option>
-                                                                        <option>Colombo</option>
-                                                                        <option>Kandy</option>
-                                                                        <option>Galle</option>
-                                                                        <option>Matara</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            
-                                                             <div class="col-md-3">
-                                                                <div class="form-group form-group-lg form-group-select-plus">
-                                                                    <br/>
-                                                                    
-                                                                </div>
-                                                             </div>
-                                                             
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="btn btn-primary" type="submit">Search Job</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-							
-							<div class="row">
-								<div class="col-md-3">
-									<ul class="job-category">
-										<li><a href="" >Software Engineer Dev - IT <span>(503)</span></a></li>
-										<li><a href="" >Quality Assuarance - IT <span>(503)</span></a></li>
-										<li><a href="" >Networking - IT<span>(503)</span></a></li>
-										<li><a href="" >Hardware - IT <span>(503)</span></a></li>
-										<li><a href="" >Banking & Insurance<span>(503)</span></a></li>
-										<li><a href="" >HR & Recruitment <span>(503)</span></a></li>
-										<li><a href="" >Accounting & Finance <span>(503)</span></a></li>
-									</ul>
+        <div class="wrapper show-onload">
+			<div class="rel">
+				<div class="main-page-title"><!-- start main page title -->
+					<div class="container">
+						<div class="post-job-title"><h1>Post a Job<h1></div>
+						<div class="post-job-phone">Call: 1 800 000 500</div>
+					</div>
+				</div><!-- end main page title -->
+				
+				<div class="container">
+					<div class="spacer-1">&nbsp;</div>
+					<div class="row">
+						<div class="col-md-8">
+							<form role="form" class="post-job-form">
+								<div class="form-group">
+									<label for="email">Your Email</label>
+									<input type="email" class="form-control input" id="email">
 								</div>
-								<div class="col-md-3">
-									<ul class="job-category">
-										<li><a href="" >Civil Engineer <span>(503)</span></a></li>
-										<li><a href="" >Architect <span>(503)</span></a></li>
-										<li><a href="" >Tourism & Hospitality <span>(503)</span></a></li>
-										<li><a href="" >Apperal/ Clothing <span>(503)</span></a></li>
-										<li><a href="" >Mechanical Engineer <span>(503)</span></a></li>
-										<li><a href="" >Security <span>(503)</span></a></li>
-										<li><a href="" >Fashion Design & Beauty <span>(503)</span></a></li>
-									</ul>
+								<div class="form-group">
+									<label for="jobtitle">Job Title</label>
+									<input type="text" class="form-control input" id="jobtitle">
 								</div>
-								<div class="col-md-3">
-									<ul class="job-category">
-										<li><a href="" >Public & Customer Relations <span>(503)</span></a></li>
-										<li><a href="" >Electrician <span>(503)</span></a></li>
-										<li><a href="" >Manufacturing <span>(503)</span></a></li>
-										<li><a href="" >Quality Control <span>(503)</span></a></li>
-										<li><a href="" >Imports & Exports <span>(503)</span></a></li>
-										<li><a href="" >Agriculture & Environment <span>(503)</span></a></li>
-										<li><a href="" >Office Admin <span>(503)</span></a></li>
-									</ul>
+
+								<div class="form-group">
+									<label for="joblocation">Job Location <span>(Optional)</span></label>
+									<input type="text" class="form-control input" id="joblocation">
+									<p>Leave this blank if the job can be done from anywhere (i.e. lorem ipsum)</p>
 								</div>
-								<div class="col-md-3">
-									<ul class="job-category">
-										<li><a href="" >Sales & Marketing <span>(503)</span></a></li>
-										<li><a href="" >Media & Communication <span>(503)</span></a></li>
-										<li><a href="" >Hospital & Nursing <span>(503)</span></a></li>
-										<li><a href="" >Teaching <span>(503)</span></a></li>
-										<li><a href="" >Transport & Ticketing <span>(503)</span></a></li>
-										<li><a href="" >Sports & Fitness <span>(503)</span></a></li>
-										<li><a href="" >Other <span>(503)</span></a></li>
-									</ul>
+
+								<div class="form-group">
+									<label for="jobregion">Job Region</label>
+									<select class="form-control" id="jobregion">
+										<option>Blank 1</option>
+										<option>Blank 2</option>
+										<option>Blank 3</option>
+										<option>Blank 4</option>
+										<option>Blank 5</option>
+									</select>
 								</div>
+
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label for="jobtype">Job Type</label>
+										<select class="form-control" id="jobtype">
+											<option>Blank 1</option>
+											<option>Blank 2</option>
+											<option>Blank 3</option>
+											<option>Blank 4</option>
+											<option>Blank 5</option>
+										</select>
+									</div>
+
+									<div class="form-group col-md-6">
+										<label for="jobregion">Job Category</label>
+										<select class="form-control">
+											<option>Blank 1</option>
+											<option>Blank 2</option>
+											<option>Blank 3</option>
+											<option>Blank 4</option>
+											<option>Blank 5</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="jobtag">Job Tags <span>(Optional)</span></label>
+									<input type="text" class="form-control input" id="jobtag">
+									<p>Comma separate tags, such as required skills or technologies, for this job.</p>
+								</div>
+
+								<div class="form-group">
+									<label for="jobtag">Description</label>
+									<textarea class="form-control textarea"></textarea>
+								</div>
+
+								<div class="form-group">
+									<label for="appemail">Application Email / URL</label>
+									<input type="text" class="form-control input" id="appemail">
+								</div>
+
+								<div class="form-group">
+									<label for="closedate">Closing Date</label>
+									<input type="text" class="form-control input" id="closedate">
+								</div>
+
+								<h3>Company Details</h3>
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label for="companyname">Company Name</label>
+										<input type="text" class="form-control input" id="companyname">
+									</div>
+
+									<div class="form-group col-md-6">
+										<label for="tagline">Tag Line</label>
+										<input type="text" class="form-control input" id="tagline">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="jobtag">Description</label>
+									<textarea class="form-control textarea"></textarea>
+								</div>
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label for="twitter">Twitter Username <span>(Optional)</span></label>
+										<input type="text" class="form-control input" id="twitter">
+									</div>
+									<div class="form-group col-md-6">
+										<label for="website">Website <span>(Optional)</span></label>
+										<input type="text" class="form-control input" id="website">
+									</div>
+									<div class="clearfix"></div>
+									<div class="form-group col-md-6">
+										<label for="gplus">Google+ Username <span>(Optional)</span></label>
+										<input type="text" class="form-control input" id="gplus">
+									</div>
+									<div class="form-group col-md-6">
+										<label for="fb">Facebook username <span>(Optional)</span></label>
+										<input type="text" class="form-control input" id="fb">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="linkedin">Linkedin username <span>(Optional)</span></label>
+									<input type="text" class="form-control input" id="linkedin">
+								</div>
+								<div class="form-group">
+									<label for="logo">Logo <span>(Optional)</span> <small>Max. file size: 8 MB.</small></label>
+									<div class="upload">
+										<input type="file" id="logo">
+									</div>
+								</div>
+								<div class="form-group">
+									<button class="btn btn-default btn-green">SUBMIT JOB</button>
+								</div>
+							</form>
+							<div class="spacer-2">&nbsp;</div>
+						</div>
+						
+						<div class="col-md-4">
+							<div class="job-side-wrap">
+								<h4>ALREADY HAVE AN ACCOUNT?</h4>
+								<p>
+									Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search.
+								</p>
+								<p class="centering"><button class="btn btn-default btn-green">LOG IN</button></p>
 							</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+							<div class="job-side-wrap">
+								<h4>Post Your Resume</h4>
+								<p>
+									At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti molestias
+								</p>
+								<p class="centering"><button class="btn btn-default btn-black">UPLOAD YOUR RESUME <i class="icon-upload white"></i></button></p>
+							</div>
+
+							<div class="job-side-wrap">
+								<h4>New On Jobboard</h4>
+								<p>
+									At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti molestias
+								</p>
+								<p class="centering"><button class="btn btn-default btn-blue">REGISTER NOW</button></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
         </div>
         <!-- END TOP AREA  -->
         

@@ -163,3 +163,46 @@
 	background:#ebebeb;
 }
 /* ---------- Tabs -------------- */
+
+
+
+
+
+/* ---------- Post JOB Page -------------- */
+.main-page-title {
+    width: 100%;
+    min-height: 104px;
+    border-bottom: 1px solid #f4f6f7;
+    background: rgba(0, 243, 9, 0.34);
+	position: relative;
+}
+
+.post-job-title{
+    font-size: 28px;
+    color: #565656;
+    padding: 20px 0 0;
+    float: left;
+}
+
+.post-job-phone{
+    font-weight: 400;
+    font-size: 24px;
+    color: #777f81;
+    padding: 45px 0;
+    float: right;
+}
+
+
+
+@media (min-width: 768px){
+    .post-job-phone{
+        display:none;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .post-job-phone{
+        display:none;
+    }
+}
