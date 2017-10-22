@@ -117,7 +117,7 @@ if (!defined('BASEPATH'))
             } else {
                
                if($pass != $cpass){
-                $this->session->set_flashdata('password', 'Enterd password doesn`t match.Please check and try again');
+                $this->session->set_flashdata('password', 'Entered password doesn`t match. Please check and try again');
                 $this->load->view("view_reg");
                 //exit();
                }else if(strlen($pass) < 6){
@@ -125,7 +125,7 @@ if (!defined('BASEPATH'))
                 $this->load->view("view_reg");
                }else{
                 $this->model_db->register($newUser);
-                $this->session->set_flashdata('registered', 'Registerd.Please check your email to confirm the account.');
+                $this->session->set_flashdata('registered', 'Registerd. Please check your email to confirm the account.');
                 $this->load->view("view_reg");
             }
             }
