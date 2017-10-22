@@ -72,7 +72,7 @@ if (!defined('BASEPATH'))
                 
                 return true;
             } else {
-                $this->form_validation->set_error_delimiters('<div  style="color: Red;">', '</div>');
+                
                 $this->form_validation->set_message('validate', 'Incorrect username or password. Check your credentials and try again.');
                
                 return false;
@@ -91,21 +91,23 @@ if (!defined('BASEPATH'))
             $this->load->library("form_validation");
             $this->load->model("model_db");
             $this->form_validation->set_rules("first_name", "First Name", "required|trim");
-            $this->form_validation->set_rules("email", "Email", "required|trim|valid_email");
+            $this->form_validation->set_rules("email", "Email", "required|trim|valid_email|is_unique[user.email]");
             $this->form_validation->set_rules("last_name", "Last Name", "required|trim");
 
             //$this->form_validation->set_rules("phone", "Phone Number", "trim|numeric");
 
            
 
-            
-
+            $cpass=$this->input->post('cpassword');
+            $pass=$this->input->post('password');
+            $rand=rand(10000000000,90000000000);
 
             $newUser = array(
                 "first_name" => $this->input->post('first_name'),
                 "last_name" => $this->input->post('last_name'),
                 "email" => $this->input->post('email'),
-                "password" => $this->input->post('password')
+                "password" => md5($this->input->post('password')),
+                "random" =>$rand
                
             );
 
@@ -113,9 +115,19 @@ if (!defined('BASEPATH'))
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view("view_reg");
             } else {
-                $data['msg'] = "Registerd!!";
+               
+               if($pass != $cpass){
+                $this->session->set_flashdata('password', 'Enterd password doesn`t match.Please check and try again');
+                $this->load->view("view_reg");
+                //exit();
+               }else if(strlen($pass) < 6){
+                $this->session->set_flashdata('passwordlen', 'Password length should be atleast 6');
+                $this->load->view("view_reg");
+               }else{
                 $this->model_db->register($newUser);
-                $this->load->view("view_reg", $data);
+                $this->session->set_flashdata('registered', 'Registerd.Please check your email to confirm the account.');
+                $this->load->view("view_reg");
+            }
             }
 
         }

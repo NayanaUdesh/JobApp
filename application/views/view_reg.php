@@ -47,6 +47,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <img src="img/logo-invert.png" alt="Image Alternative text" title="Image Title" />
                     </a>
                     <div class="full-center">
+                        <?php
+
+                        $this->load->helper('security');
+                                        $this->load->helper("form");
+                           if(validation_errors() != NULL){
+                                        ?><div class="alert alert-danger"> <?php echo validation_errors();?></div>
+                                        <?php 
+                                    }
+
+                        ?>
                         <div class="container">
                             <div class="row row-wrap" data-gutter="60">
                                 <div class="col-md-4">
@@ -68,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <?php 
                                          $this->load->helper('security');
                                         $this->load->helper("form");
-                                        echo validation_errors(); ?>
+                                         ?>
                                     <td class="form-group form-group-ghost form-group-icon-left "><i class="fa fa-user input-icon input-icon-show"></i>
                                         
                                         <label>Username or email</label>
@@ -142,23 +152,186 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                                 </div>
+
+
+
+                               
                                 <div class="col-md-4">
-                                    <h3 class="mb15">New To SL Jobs?</h3>
-                                    <form>
-                                        <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
-                                            <label>Full Name</label>
-                                            <input class="form-control" placeholder="e.g. John Doe" type="text" />
-                                        </div>
-                                        <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-envelope input-icon input-icon-show"></i>
-                                            <label>Emai</label>
-                                            <input class="form-control" placeholder="e.g. johndoe@gmail.com" type="text" />
-                                        </div>
-                                        <div class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-lock input-icon input-icon-show"></i>
-                                            <label>Password</label>
-                                            <input class="form-control" type="password" placeholder="my secret password" />
-                                        </div>
-                                        <input class="btn btn-primary" type="submit" value="Sign up for Traveler" />
-                                    </form>
+                                    <h3 class="mb15">Login</h3>
+                                 
+
+                                    <table class="col-md-12">
+                                <tr>
+                                    
+                                            
+                                           
+                                        <?php 
+                                         $this->load->helper('security');
+                                        $this->load->helper("form");
+                                        
+                                     
+                                        if($this->session->flashdata('registered')){
+                                            ?><div class="alert alert-success"><?php
+                                            echo $this->session->flashdata('registered');
+                                            ?></div><?php
+                                        }else if ($this->session->flashdata('password')) {
+                                             ?><div class="alert alert-danger"><?php
+                                            echo $this->session->flashdata('password');
+                                            ?></div><?php
+                                        }else if($this->session->flashdata('passwordlen')){
+                                            ?><div class="alert alert-danger"><?php
+                                            echo $this->session->flashdata('passwordlen');
+                                            ?></div><?php
+                                        }
+
+                                        ?>
+
+
+                                    <td class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
+                                        
+                                        <label>First Name</label>
+                                        <?php
+                                       
+
+                                        echo form_open("site/register");
+
+                                        
+                                        $data = array(
+                                            "name" => "first_name",
+                                            "id" => "first_name",
+                                           
+                                            "class" => "form-control",
+                                            "placeholder" => "e.g. john"
+                                           
+                                        );
+
+                                        echo form_input($data);
+                                        ?>
+                                    </td>
+                                
+                                </tr>
+
+                                  <tr>
+                                    
+                                           
+                                            
+                                       
+                                    <td class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
+                                        <label>Last Name</label>
+                                        <?php
+                                        
+                                        $data = array(
+                                            "name" => "last_name",
+                                            "id" => "last_name",
+                                            
+                                            "value" => "",
+                                            "class" => "form-control",
+                                            "placeholder" => "e.g. Doe",
+                                            "aria-describedby" => "sizing-addon1"
+                                        );
+
+                                        echo form_input($data);
+                                        ?>
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    
+                                           
+                                            
+                                       
+                                    <td class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-envelope input-icon input-icon-show"></i>
+                                        <label>Email</label>
+                                        <?php
+                                        
+                                        $data = array(
+                                            "name" => "email",
+                                            "id" => "email",
+                                            
+                                            "value" => "",
+                                            "class" => "form-control",
+                                            "placeholder" => "e.g. johndoe@gmail.com",
+                                            "aria-describedby" => "sizing-addon1"
+                                        );
+
+                                        echo form_input($data);
+                                        ?>
+                                    </td>
+                                    
+                                </tr>
+                                 <tr>
+                                    
+                                           
+                                            
+                                       
+                                    <td class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-lock input-icon input-icon-show"></i>
+                                        <label>Password</label>
+                                        <?php
+                                        
+                                        $data = array(
+                                            "name" => "password",
+                                            "id" => "password",
+                                            "type" => "password",
+                                            "value" => "",
+                                            "class" => "form-control",
+                                            "placeholder" => "my secret password",
+                                            "aria-describedby" => "sizing-addon1"
+                                        );
+
+                                        echo form_input($data);
+                                        ?>
+                                    </td>
+                                    
+                                </tr>
+                                 <tr>
+                                    
+                                           
+                                            
+                                       
+                                    <td class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-lock input-icon input-icon-show"></i>
+                                        <label>Confirm Password</label>
+                                        <?php
+                                        
+                                        $data = array(
+                                            "name" => "cpassword",
+                                            "id" => "cpassword",
+                                            "type" => "password",
+                                            "value" => "",
+                                            "class" => "form-control",
+                                            "placeholder" => "Confirm Password",
+                                            "aria-describedby" => "sizing-addon1"
+                                        );
+
+                                        echo form_input($data);
+                                        ?>
+                                    </td>
+                                    
+                                </tr>
+
+                                <tr>
+                                    <td>.</td>
+                                </tr>
+                                  <tr>
+                                    
+                                    <td >
+                                        <?php
+                                        $data = array(
+                                            "name" => "register",
+                                            "id" => "register",
+                                            "value" => "Sign Up",
+                                            "class" => "btn btn-primary",
+                                            "placeholder" => "Sign Up",
+                                            
+                                        );
+                                        echo form_submit($data);
+                                        echo form_close();
+                                        ?>
+                                    </td>
+                                </tr>
+
+                                </table>
+
+
                                 </div>
                             </div>
                         </div>
