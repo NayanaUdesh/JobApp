@@ -65,13 +65,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     
                                             
                                            
-                                        <?php echo validation_errors(); ?>
+                                        <?php 
+                                         $this->load->helper('security');
+                                        $this->load->helper("form");
+                                        echo validation_errors(); ?>
                                     <td class="form-group form-group-ghost form-group-icon-left "><i class="fa fa-user input-icon input-icon-show"></i>
                                         
                                         <label>Username or email</label>
                                         <?php
-                                        $this->load->helper('security');
-                                        $this->load->helper("form");
+                                       
 
                                         echo form_open("site/LoginValidation");
 
