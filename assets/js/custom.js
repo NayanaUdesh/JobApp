@@ -180,6 +180,7 @@ $(document).ready(
         zindex: 9999
     });
 
+	
 
         // Owl Carousel
         var owlCarousel = $('#owl-carousel'),

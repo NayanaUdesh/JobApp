@@ -1,13 +1,19 @@
 /*YOUR CUSTOM STYLES*/
 
 /* ---------- Tabs -------------- */
-.etabs {
+.nav-tabs {
 	margin:0; 
-	padding:0; 
+	padding:0;
+	border-bottom: none;
 }
 
 .full-tab{
 	padding: 0;
+}
+
+.spacer-2{
+	width:100%;
+	height:100px;
 }
 
 .tab { 
@@ -46,7 +52,7 @@
 .tab a.active { 
 	color: #27a2f8;
 }
-.tab-container .panel-container {
+.tab-container .tab-content {
 	background: #fff;
 	border-top:1px solid #e3e3e3;
 	padding:15px 0;
@@ -55,7 +61,7 @@
 	color:#565656;	
 }
 
-.panel-container {
+.tab-content {
 	margin-bottom: 10px;
 }
 

@@ -22,10 +22,7 @@
     <link href="<?php echo base_url("assets/css/mystyles.css"); ?>" rel="stylesheet">
     <link href="<?php echo base_url("assets/css/styles.css"); ?>" rel="stylesheet">
 
-    <script src="<?php echo base_url("assets/js/modernizr.js"); ?>"></script>
-
-
-
+	<script src="<?php echo base_url("assets/js/modernizr.js"); ?>"></script>
 
 </head>
 
@@ -194,147 +191,165 @@
             <div class="row">
 					<div class="col-md-8">
 						<h4><i class="glyphicon glyphicon-briefcase"></i> Recent Job</h4>
-						<div id="tab-container" class="tab-container" data-easytabs="true"><!-- Start Tabs -->
-							<ul class="etabs clearfix">
-								<li class="tab active"><a href="#all" class="active">All</a></li>
-								<li class="tab"><a href="#contract">Contract</a></li>
-								<li class="tab"><a href="#full">Full Time</a></li>
-								<li class="tab"><a href="#free">Freelence</a></li>
+						<div id="tab-container" class="tab-container"><!-- Start Tabs -->
+							<ul class="nav nav-tabs clearfix">
+								<li class="active"><a data-toggle="tab" href="#all">All</a></li>
+								<li><a data-toggle="tab" href="#contract">Contract</a></li>
+								<li><a data-toggle="tab" href="#full">Full Time</a></li>
+								<li><a data-toggle="tab" href="#free">Freelence</a></li>
 							</ul>
-							<div class="panel-container">
-								<div id="all" style="display: block;" class="active"><!-- Tabs section 1 -->
+							<div class="tab-content">
+									<div id="all" style="display: block;" class="tab-pane fade in active"><!-- Tabs section 1 -->
+
+										<div class="recent-job-list-home"><!-- Tabs content -->
+											<div class="job-list-logo col-md-1 ">
+												<img src="<?php echo base_url("assets/img/company-1-post.png");?>" class="img-responsive" alt="dummy-joblist">
+											</div>
+											<div class="col-md-6 job-list-desc">
+												<h6>Store General Manager</h6>
+												<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
+											</div>
+											<div class="col-md-5 full-tab">
+												<div class="row">
+													<div class="job-list-location col-md-7 ">
+														<h6><i class="fa fa-map-marker"></i>San Fransisco</h6>
+													</div>
+													<div class="job-list-type col-md-5 ">
+														<h6><i class="fa fa-user"></i>Full Time</h6>
+													</div>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+										</div><!-- Tabs content -->
+
+										<div class="recent-job-list-home"><!-- Tabs content -->
+											<div class="job-list-logo col-md-1 ">
+												<img src="<?php echo base_url("assets/img/company-2-post.png");?>" class="img-responsive" alt="dummy-joblist">
+											</div>
+											<div class="col-md-6 job-list-desc">
+												<h6>Department Head</h6>
+												<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
+											</div>
+											<div class="col-md-5 full-tab">
+												<div class="row">
+													<div class="job-list-location col-md-7 ">
+														<h6><i class="fa fa-map-marker"></i>Denver</h6>
+													</div>
+													<div class="job-list-type col-md-5 ">
+														<h6><i class="fa fa-user"></i>Full Time</h6>
+													</div>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+										</div><!-- Tabs content -->
+
+										<div class="recent-job-list-home"><!-- Tabs content -->
+											<div class="job-list-logo col-md-1 ">
+												<img src="<?php echo base_url("assets/img/company-1-post.png");?>" class="img-responsive" alt="dummy-joblist">
+											</div>
+											<div class="col-md-6 job-list-desc">
+												<h6>Marketing</h6>
+												<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
+											</div>
+											<div class="col-md-5 full-tab">
+												<div class="row">
+													<div class="job-list-location col-md-7 ">
+														<h6><i class="fa fa-map-marker"></i>Washington</h6>
+													</div>
+													<div class="job-list-type col-md-5 ">
+														<h6><i class="fa fa-user"></i>Part Time</h6>
+													</div>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+										</div><!-- Tabs content -->
+
+										<div class="recent-job-list-home"><!-- Tabs content -->
+											<div class="job-list-logo col-md-1 ">
+												<img src="<?php echo base_url("assets/img/company-2-post.png");?>" class="img-responsive" alt="dummy-joblist">
+											</div>
+											<div class="col-md-6 job-list-desc">
+												<h6>General Manager</h6>
+												<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
+											</div>
+											<div class="col-md-5 full-tab">
+												<div class="row">
+													<div class="job-list-location col-md-7 ">
+														<h6><i class="fa fa-map-marker"></i>New York</h6>
+													</div>
+													<div class="job-list-type col-md-5 ">
+														<h6><i class="fa fa-user"></i>Full Time</h6>
+													</div>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+										</div><!-- Tabs content -->
+
+										<div class="recent-job-list-home"><!-- Tabs content -->
+											<div class="job-list-logo col-md-1 ">
+												<img src="<?php echo base_url("assets/img/company-1-post.png");?>" class="img-responsive" alt="dummy-joblist">
+											</div>
+											<div class="col-md-6 job-list-desc">
+												<h6>Creative Designer</h6>
+												<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
+											</div>
+											<div class="col-md-5 full-tab">
+												<div class="row">
+													<div class="job-list-location col-md-7 ">
+														<h6><i class="fa fa-map-marker"></i>Los Angeles</h6>
+													</div>
+													<div class="job-list-type col-md-5 ">
+														<h6><i class="fa fa-user"></i>Full Time</h6>
+													</div>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+										</div><!-- Tabs content -->
+
+										<div class="recent-job-list-home"><!-- Tabs content -->
+											<div class="job-list-logo col-md-1 ">
+												<img src="<?php echo base_url("assets/img/company-2-post.png");?>" class="img-responsive" alt="dummy-joblist">
+											</div>
+											<div class="col-md-6 job-list-desc">
+												<h6>Finance Head</h6>
+												<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
+											</div>
+											<div class="col-md-5 full-tab">
+												<div class="row">
+													<div class="job-list-location col-md-7 ">
+														<h6><i class="fa fa-map-marker"></i>Texas</h6>
+													</div>
+													<div class="job-list-type col-md-5 ">
+														<h6><i class="fa fa-user"></i>Full Time</h6>
+													</div>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+										</div><!-- Tabs content -->
+
+									</div><!-- Tabs section 1 -->
 								
-									<div class="recent-job-list-home"><!-- Tabs content -->
-										<div class="job-list-logo col-md-1 ">
-											<img src="<?php echo base_url("assets/img/company-1-post.png");?>" class="img-responsive" alt="dummy-joblist">
-										</div>
-										<div class="col-md-6 job-list-desc">
-											<h6>Store General Manager</h6>
-											<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
-										</div>
-										<div class="col-md-5 full-tab">
-											<div class="row">
-												<div class="job-list-location col-md-7 ">
-													<h6><i class="fa fa-map-marker"></i>San Fransisco</h6>
-												</div>
-												<div class="job-list-type col-md-5 ">
-													<h6><i class="fa fa-user"></i>Full Time</h6>
-												</div>
-											</div>
-										</div>
-										<div class="clearfix"></div>
-									</div><!-- Tabs content -->
-									
-									<div class="recent-job-list-home"><!-- Tabs content -->
-										<div class="job-list-logo col-md-1 ">
-											<img src="<?php echo base_url("assets/img/company-2-post.png");?>" class="img-responsive" alt="dummy-joblist">
-										</div>
-										<div class="col-md-6 job-list-desc">
-											<h6>Department Head</h6>
-											<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
-										</div>
-										<div class="col-md-5 full-tab">
-											<div class="row">
-												<div class="job-list-location col-md-7 ">
-													<h6><i class="fa fa-map-marker"></i>Denver</h6>
-												</div>
-												<div class="job-list-type col-md-5 ">
-													<h6><i class="fa fa-user"></i>Full Time</h6>
-												</div>
-											</div>
-										</div>
-										<div class="clearfix"></div>
-									</div><!-- Tabs content -->
-									
-									<div class="recent-job-list-home"><!-- Tabs content -->
-										<div class="job-list-logo col-md-1 ">
-											<img src="<?php echo base_url("assets/img/company-1-post.png");?>" class="img-responsive" alt="dummy-joblist">
-										</div>
-										<div class="col-md-6 job-list-desc">
-											<h6>Marketing</h6>
-											<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
-										</div>
-										<div class="col-md-5 full-tab">
-											<div class="row">
-												<div class="job-list-location col-md-7 ">
-													<h6><i class="fa fa-map-marker"></i>Washington</h6>
-												</div>
-												<div class="job-list-type col-md-5 ">
-													<h6><i class="fa fa-user"></i>Part Time</h6>
-												</div>
-											</div>
-										</div>
-										<div class="clearfix"></div>
-									</div><!-- Tabs content -->
-									
-									<div class="recent-job-list-home"><!-- Tabs content -->
-										<div class="job-list-logo col-md-1 ">
-											<img src="<?php echo base_url("assets/img/company-2-post.png");?>" class="img-responsive" alt="dummy-joblist">
-										</div>
-										<div class="col-md-6 job-list-desc">
-											<h6>General Manager</h6>
-											<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
-										</div>
-										<div class="col-md-5 full-tab">
-											<div class="row">
-												<div class="job-list-location col-md-7 ">
-													<h6><i class="fa fa-map-marker"></i>New York</h6>
-												</div>
-												<div class="job-list-type col-md-5 ">
-													<h6><i class="fa fa-user"></i>Full Time</h6>
-												</div>
-											</div>
-										</div>
-										<div class="clearfix"></div>
-									</div><!-- Tabs content -->
-									
-									<div class="recent-job-list-home"><!-- Tabs content -->
-										<div class="job-list-logo col-md-1 ">
-											<img src="<?php echo base_url("assets/img/company-1-post.png");?>" class="img-responsive" alt="dummy-joblist">
-										</div>
-										<div class="col-md-6 job-list-desc">
-											<h6>Creative Designer</h6>
-											<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
-										</div>
-										<div class="col-md-5 full-tab">
-											<div class="row">
-												<div class="job-list-location col-md-7 ">
-													<h6><i class="fa fa-map-marker"></i>Los Angeles</h6>
-												</div>
-												<div class="job-list-type col-md-5 ">
-													<h6><i class="fa fa-user"></i>Full Time</h6>
-												</div>
-											</div>
-										</div>
-										<div class="clearfix"></div>
-									</div><!-- Tabs content -->
-									
-									<div class="recent-job-list-home"><!-- Tabs content -->
-										<div class="job-list-logo col-md-1 ">
-											<img src="<?php echo base_url("assets/img/company-2-post.png");?>" class="img-responsive" alt="dummy-joblist">
-										</div>
-										<div class="col-md-6 job-list-desc">
-											<h6>Finance Head</h6>
-											<p>Similique sunt in culpa qui officia deserunt mollitia animi</p>
-										</div>
-										<div class="col-md-5 full-tab">
-											<div class="row">
-												<div class="job-list-location col-md-7 ">
-													<h6><i class="fa fa-map-marker"></i>Texas</h6>
-												</div>
-												<div class="job-list-type col-md-5 ">
-													<h6><i class="fa fa-user"></i>Full Time</h6>
-												</div>
-											</div>
-										</div>
-										<div class="clearfix"></div>
-									</div><!-- Tabs content -->
-									
-								</div><!-- Tabs section 1 -->
+								
+									<!-- Tabs section 1 -->
+									<div id="contract" style="display: none;" class="tab-pane fade"><!-- Tabs section 2 -->
+
+
+									</div><!-- Tabs section 2 -->
+									<div id="full" style="display: none;" class="tab-pane fade"><!-- Tabs section 3 -->
+
+
+									</div><!-- Tabs section 3 -->
+									<div id="free" style="display: none;" class="tab-pane fade"><!-- Tabs section 4 -->
+
+
+
+									</div><!-- Tabs section 4 -->
+						 
+								
 								
 							</div>
 						</div><!-- end Tabs -->
-						<div class="spacer-2"></div>
+						
 					</div>
 					
 					<div class="col-md-4">
@@ -390,6 +405,8 @@
                 </div>
             </div>
         </div>
+		
+		
         <div class="container">
             <div class="gap"></div>
             <h2 class="text-center">Top Destinations</h2>
