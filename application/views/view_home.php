@@ -78,10 +78,6 @@
                                     ?><li><a href="<?php echo base_url(); ?>site/Login">Sign In</a>
                                     	<?php } ?>
                                     </li>
-									
-									<li><a href="<?php echo base_url(); ?>site/Login">Sign In</a>
-                                    	<?php } ?>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
