@@ -40,14 +40,43 @@
                             </a>
                         </div>
                       
-                        <div class="col-md-9">
+                        <div class="col-md-9" >
                             <div class="top-user-area clearfix">
                                 <ul class="top-user-area-list list list-horizontal list-border">
-                                    <li class="top-user-area-avatar">
+                                    <?php 
+
+                                    if($this->session->userdata('is_logged_in') == 1){?><li class="top-user-area-avatar">
                                         <a href="user-profile.html">
-                                            <img class="origin round" src="<?php echo base_url("assets/img/40x40.png");?>" alt="" title="" />User Name</a>
+
+                                        	<?php
+											foreach ($this->session->userdata('welcome_name') as $i) {
+                                
+                               				 
+
+                               				 $thumb=$i['icon'];
+                               				 
+                           					 }	
+
+                                        	?>
+                                            <img class="origin round" src="<?php echo base_url($thumb);?>" alt="" title="" />
+
+                                            <?php
+                                            foreach ($this->session->userdata('welcome_name') as $n) {
+                                echo  "Welcome" . " " .$n['first_name'];
+                            }	
+
+                                            ?>
+                                        </a>
                                     </li>
-                                    <li><a href="#">Sign Out</a>
+                                    <li><a href="<?php echo base_url(); ?>site/logout">Sign Out</li>
+                                    <?php
+                                }?>
+                                    
+
+                                    <?php
+                                    if($this->session->userdata('is_logged_in') != 1){
+                                    ?><li><a href="<?php echo base_url(); ?>site/Login">Sign In</a>
+                                    	<?php } ?>
                                     </li>
                                 </ul>
                             </div>

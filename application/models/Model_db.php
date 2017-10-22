@@ -12,4 +12,31 @@ class Model_db extends CI_Model {
     function register($data) {
         $this->db->insert("user", $data);
     }
+
+
+     function can_log_in(){
+        $this->db->where('email', $this->input->post('email'));
+        $this->db->where('password', $this->input->post('password'));
+        
+        $query= $this->db->get('user');
+        if($query->num_rows()==1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+    function getFirstName($email) {
+
+        $q = $this->db->query("SELECT * FROM user WHERE email='$email'");
+        return $q->result_array();
+    }
+    
+
+    function getIcon($email) {
+
+        $q = $this->db->query("SELECT `icon` FROM user WHERE email='$email'");
+        return $q->result_array();
+    }
 }
