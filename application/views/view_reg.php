@@ -60,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <h3 class="mb15">Login</h3>
                                  
 
-                                    <table>
+                                    <table class="col-md-12">
                                 <tr>
                                     
                                             
@@ -114,10 +114,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </td>
                                     
                                 </tr>
-
+                                <tr>
+                                    <td>.</td>
+                                </tr>
                                   <tr>
                                     
-                                    <td class="col-lg-12">
+                                    <td >
                                         <?php
                                         $data = array(
                                             "name" => "login",
