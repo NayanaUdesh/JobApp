@@ -65,8 +65,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     
                                             
                                            
-                                        
+                                        <?php echo validation_errors(); ?>
                                     <td class="form-group form-group-ghost form-group-icon-left "><i class="fa fa-user input-icon input-icon-show"></i>
+                                        
                                         <label>Username or email</label>
                                         <?php
                                         $this->load->helper('security');
@@ -74,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                                         echo form_open("site/LoginValidation");
 
-                                        echo validation_errors();
+                                        
                                         $data = array(
                                             "name" => "email",
                                             "id" => "email",
