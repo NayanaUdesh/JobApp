@@ -89,10 +89,10 @@
                     <ul class="slimmenu" id="slimmenu">
                         <li class="active"><a href="<?php echo base_url(); ?>">Home</a> </li>
                         <li><a href="success-payment.html">All Jobs</a> </li>
-                        <li><a href="<?php echo base_url(); ?>site/PostJob">Post Jobs</a> </li>
-                        <li><a href="hotels.html">Advertise</a> </li>
-                        <li><a href="flights.html">About Us</a> </li>
-                        <li><a href="rentals.html">Contact Us</a> </li>
+                        <li><a href="<?php echo base_url(); ?>menu/PostJob">Post Jobs</a> </li>
+                        <li><a href="<?php echo base_url(); ?>menu/Advertise">Advertise</a> </li>
+                        <li><a href="<?php echo base_url(); ?>menu/AboutPage">About Us</a> </li>
+                        <li><a href="<?php echo base_url(); ?>menu/ContactPage">Contact Us</a> </li>
                         
                     </ul>
                 </div>

@@ -16,9 +16,6 @@ if (!defined('BASEPATH'))
         $this->load->view("view_reg");
     }
 
-	public function PostJob(){
-        $this->load->view("view_post_job");
-    }
 	
    function LoginValidation() {
             $this->load->model('model_db');
