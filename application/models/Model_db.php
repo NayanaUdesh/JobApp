@@ -39,4 +39,16 @@ class Model_db extends CI_Model {
         $q = $this->db->query("SELECT `icon` FROM user WHERE email='$email'");
         return $q->result_array();
     }
+
+    function activate($email){
+
+        $q=$this->db->query("SELECT * FROM user WHERE email='$email'");
+        return $q->result_array();
+    }
+
+    function activationupdate($update,$where) {
+            $this->db->where('email', $where);
+            $this->db->update('user', $update);
+            
+        }
 }

@@ -1,4 +1,5 @@
 <?php
+error_reporting(NULL);
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 ?>
@@ -19,49 +20,88 @@ if (!defined('BASEPATH'))
 	public function PostJob(){
         $this->load->view("view_post_job");
     }
+
+    public function activate(){
+        $this->load->model('model_db');
+        $email= $_GET['email'];
+        $rand=$_GET['random'];
+        //echo $_GET['random'];
+        //$this->load->view("view_activate");
+
+        $activatedata=$this->model_db->activate($email);
+
+        foreach ($activatedata as $a) {
+            $code=$a['random'];
+            $mail=$a['email'];
+        }
+
+        
+   
+
+
+
+
+        if(($email == $mail) && ($rand==$code)){
+
+        $newRow = array(
+                        "status" => 1
+                    );
+        $this->model_db->activationupdate($newRow,$email);
+
+            $this->session->set_flashdata('activated', 'Your account is activated');
+            $this->load->view("view_activate");
+        }else{
+            $this->session->set_flashdata('notactivated', 'There is a problem while activating your account.Please contact site admin');
+            $this->load->view("view_activate");
+        }
+
+    }
 	
-   function LoginValidation() {
+     function LoginValidation() {
             $this->load->model('model_db');
             $this->load->library('form_validation');
             $this->form_validation->set_rules("email", "email", 'required|trim|xss_clean|callback_validate');
             $this->form_validation->set_rules("password", "Password", "required|trim");
-
-
-
            // $name = $this->input->post('username');
             //$fname = $this->model_db->getFirstName($name);
-
             if ($this->form_validation->run() == TRUE) {
               
-
                 $email=$this->input->post('email');
                 
                 $name=$this->model_db->getFirstName($email);
-
                 $icon=$this->model_db->getIcon($email);     
-                           
+                       
+                $checkactivation=$this->model_db->activate($email);
+
+                foreach ($checkactivation as $c) {
+                        $status=$c['status'];
+                    } 
+
+
+                    //echo $status;   
                
+               if($status =="1"){
                 $data = array(
                     'email' => $this->input->post('email'),
                     'is_logged_in' => 1,
                     'welcome_name' => $name,
                     'welcome_icon'=> $icon,
-
                     
                 );
                 $this->session->set_userdata($data);
                 //echo 'test';
-
-                
+                }
             }
         
-
             if($this->session->userdata('is_logged_in') ==1){
                 $this->load->view('view_home', $data);
                 
-            }else{
+            }else if($status != "1"){
+                $this->session->set_flashdata('activatebeforlogin', 'Your account is not activated yet.Please check your mail for activation link');
                 $this->load->view('view_reg');
                 
+            }else{
+               $this->load->view('view_reg'); 
             }
         }
 
@@ -102,6 +142,7 @@ if (!defined('BASEPATH'))
             $pass=$this->input->post('password');
             $rand=rand(10000000000,90000000000);
 
+
             $newUser = array(
                 "first_name" => $this->input->post('first_name'),
                 "last_name" => $this->input->post('last_name'),
@@ -114,7 +155,7 @@ if (!defined('BASEPATH'))
             //after sending mail above detials will save in database from 'addNotification' function in model_db
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view("view_reg");
-            } else {
+                          } else {
                
                if($pass != $cpass){
                 $this->session->set_flashdata('password', 'Enterd password doesn`t match.Please check and try again');
@@ -127,10 +168,36 @@ if (!defined('BASEPATH'))
                 $this->model_db->register($newUser);
                 $this->session->set_flashdata('registered', 'Registerd.Please check your email to confirm the account.');
                 $this->load->view("view_reg");
+               // $this->SendMail();
+
+
+                 $fname=$this->input->post('first_name');
+                $lname=$this->input->post('last_name');
+                $email=$this->input->post('email');
+                $headers = "From: support@sljobs.com";
+
+                $body="
+
+                Hello $fname,
+
+                Please use following link to active your account.
+
+                http://job.onholidaytravels.com/site/activate?email=$email&&random=$rand;
+
+                Thank You.
+
+
+                ";
+                
+                
+                mail( $email, 'Activate your account!!', $body, $headers);
+                //echo 'sent';
             }
             }
 
         }
+
+     
 }
 ?>
 </html>

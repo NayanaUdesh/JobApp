@@ -54,6 +54,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                            if(validation_errors() != NULL){
                                         ?><div class="alert alert-danger"> <?php echo validation_errors();?></div>
                                         <?php 
+                                    }else if($this->session->flashdata('activatebeforlogin')){
+                                       
+                                        ?><div class="alert alert-danger"> <?php echo $this->session->flashdata('activatebeforlogin');?></div>
+                                        <?php 
                                     }
 
                         ?>
@@ -183,7 +187,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             echo $this->session->flashdata('passwordlen');
                                             ?></div><?php
                                         }
-
                                         ?>
 
 
