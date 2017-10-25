@@ -35,7 +35,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            <a class="logo" href="index.html">
+                            <a class="logo" href="i<?php echo base_url(); ?>">
                                 <img src="<?php echo base_url("assets/img/logo-invert.png");?>" alt="Image Alternative text" title="Sri Lanka Jobs" />
                             </a>
                         </div>
@@ -107,7 +107,7 @@
 				<div class="main-page-title"><!-- start main page title -->
 					<div class="container">
 						<div class="post-job-title"><h1>Post a Job<h1></div>
-						<div class="post-job-phone">Call: 1 800 000 500</div>
+						<div class="post-job-phone">Call: 94 2 543 141</div>
 					</div>
 				</div><!-- end main page title -->
 				
@@ -117,28 +117,41 @@
 						<div class="col-md-8">
 							<form role="form" class="post-job-form">
 								<div class="form-group">
-									<label for="email">Your Email</label>
-									<input type="email" class="form-control input" id="email">
-								</div>
-								<div class="form-group">
 									<label for="jobtitle">Job Title</label>
 									<input type="text" class="form-control input" id="jobtitle">
 								</div>
-
 								<div class="form-group">
-									<label for="joblocation">Job Location <span>(Optional)</span></label>
-									<input type="text" class="form-control input" id="joblocation">
-									<p>Leave this blank if the job can be done from anywhere (i.e. lorem ipsum)</p>
+									<label for="email">Your E-mail</label>
+									<input type="email" class="form-control input" id="email">
+									<!-- Get the email from session and auto populate this field. If necessary the user can make the change -->
 								</div>
 
 								<div class="form-group">
-									<label for="jobregion">Job Region</label>
-									<select class="form-control" id="jobregion">
-										<option>Blank 1</option>
-										<option>Blank 2</option>
-										<option>Blank 3</option>
-										<option>Blank 4</option>
-										<option>Blank 5</option>
+									<label for="jobcategory">Job Category <span></span></label>
+									<input type="text" class="form-control input" id="jobcategory">
+									<p>Load Sub Catogory depending on this Input. This Should be an autocomplete</p>
+								</div>
+								<div class="form-group">
+									<label for="subcategory">Sub Category <span>(Optional)</span></label>
+									<input type="text" class="form-control input" id="subcategory">
+									<p>Load Sub Catogory depending on the Job Category ID. This shoudl be a dropdown</p>
+								</div>
+
+								<div class="form-group">
+									<label for="joblocation">Job Location</label>
+									<select class="form-control" id="joblocation">
+										<option>Colombo</option>
+										<option>Galle</option>
+										<option>Matara</option>
+										<option>Kandy</option>
+										<option>Trincomalee</option>
+										<option>Negambo</option>
+										<option>Kiribathgoda</option>
+										<option>Kadawatha</option>
+										<option>Wattala</option>
+										<option>Malabe</option>
+										<option>Homagama</option>
+										<option>Piliyadala</option>
 									</select>
 								</div>
 
@@ -146,16 +159,15 @@
 									<div class="form-group col-md-6">
 										<label for="jobtype">Job Type</label>
 										<select class="form-control" id="jobtype">
-											<option>Blank 1</option>
-											<option>Blank 2</option>
-											<option>Blank 3</option>
-											<option>Blank 4</option>
-											<option>Blank 5</option>
+											<option>Full Time</option>
+											<option>Contract</option>
+											<option>Part Time</option>
+											<option>Freelance</option>
 										</select>
 									</div>
 
 									<div class="form-group col-md-6">
-										<label for="jobregion">Job Category</label>
+										<label for="">Job Category</label>
 										<select class="form-control">
 											<option>Blank 1</option>
 											<option>Blank 2</option>
@@ -173,7 +185,7 @@
 								</div>
 
 								<div class="form-group">
-									<label for="jobtag">Description</label>
+									<label for="jobdescription">Description</label>
 									<textarea class="form-control textarea"></textarea>
 								</div>
 
@@ -182,6 +194,13 @@
 									<input type="text" class="form-control input" id="appemail">
 								</div>
 
+								<div class="form-group">
+									<label for="logo">Job Image <span>(Optional)</span> <small>Max. file size: 8 MB.</small></label>
+									<div class="jobimage">
+										<input type="file" id="jobimage">
+									</div>
+								</div>
+								
 								<div class="form-group">
 									<label for="closedate">Closing Date</label>
 									<input type="text" class="form-control input" id="closedate">
@@ -247,7 +266,7 @@
 								<p>
 									Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search.
 								</p>
-								<p class="centering"><button class="btn btn-default btn-green">LOG IN</button></p>
+								<p class="centering"><button class="btn btn-default btn-green"><a href="<?php echo base_url(); ?>site/Login">LOG IN</a></button></p>
 							</div>
 
 							<div class="job-side-wrap">
@@ -263,7 +282,7 @@
 								<p>
 									At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti molestias
 								</p>
-								<p class="centering"><button class="btn btn-default btn-blue">REGISTER NOW</button></p>
+								<p class="centering"><button class="btn btn-default btn-blue"><a href="<?php echo base_url(); ?>site/Login">REGISTER NOW</a></button></p>
 							</div>
 						</div>
 					</div>

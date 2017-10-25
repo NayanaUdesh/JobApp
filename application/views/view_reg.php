@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html class="full">
 
 <head>
-    <title>Traveler - Login register</title>
+    <title>LK Jobs - Login | Register</title>
 
 
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
@@ -43,8 +43,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="bg-mask"></div>
                 <div class="bg-img" style="background-image:url(img/1280x852.png);"></div>
                 <div class="bg-holder-content full text-white">
-                    <a class="logo-holder" href="index.html">
-                        <img src="img/logo-invert.png" alt="Image Alternative text" title="Image Title" />
+                    <a class="logo-holder" href="<?php echo base_url(); ?>">
+                        <img src="<?php echo base_url("assets/img/logo-invert.png");?>" alt="Image Alternative text" title="Image Title" />
                     </a>
                     <div class="full-center">
                         <?php
@@ -161,7 +161,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                                
                                 <div class="col-md-4">
-                                    <h3 class="mb15">Login</h3>
+                                    <h3 class="mb15">Sign Up</h3>
                                  
 
                                     <table class="col-md-12">
