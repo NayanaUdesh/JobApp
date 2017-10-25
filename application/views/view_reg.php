@@ -311,6 +311,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     
                                 </tr>
 
+                                  <tr>
+                                    
+                                           
+                                            
+                                       
+                                    <td class="form-group form-group-ghost form-group-icon-left"><i class="fa fa-envelope input-icon input-icon-show"></i>
+                                        <label>Organization Name</label>
+                                        <?php
+                                        
+                                        $data = array(
+                                            "name" => "cname",
+                                            "id" => "cname",
+                                            
+                                            "value" => "",
+                                            "class" => "form-control",
+                                            "placeholder" => "e.g. ABC Pvt Ltd",
+                                            "aria-describedby" => "sizing-addon1"
+                                        );
+
+                                        echo form_input($data);
+                                        ?>
+                                    </td>
+                                    
+                                </tr>
+
                                 <tr>
                                     <td>.</td>
                                 </tr>
