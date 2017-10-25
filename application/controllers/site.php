@@ -145,7 +145,8 @@ if (!defined('BASEPATH'))
                 "last_name" => $this->input->post('last_name'),
                 "email" => $this->input->post('email'),
                 "password" => md5($this->input->post('password')),
-                "random" =>$rand
+                "random" =>$rand,
+                "cname" => $this->input->post('cname')
                
             );
 
