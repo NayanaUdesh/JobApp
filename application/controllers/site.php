@@ -17,11 +17,6 @@ if (!defined('BASEPATH'))
         $this->load->view("view_reg");
     }
 
-<<<<<<< HEAD
-	public function PostJob(){
-        $this->load->view("view_post_job");
-    }
-
     public function activate(){
         $this->load->model('model_db');
         $email= $_GET['email'];
@@ -57,8 +52,7 @@ if (!defined('BASEPATH'))
         }
 
     }
-=======
->>>>>>> origin/master
+	    
 	
      function LoginValidation() {
             $this->load->model('model_db');
