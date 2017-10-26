@@ -120,21 +120,19 @@
 									<label for="jobtitle">Job Title</label>
 									<input type="text" class="form-control input" id="jobtitle">
 								</div>
-								<div class="form-group">
-									<label for="email">Your E-mail</label>
-									<input type="email" class="form-control input" id="email">
-									<!-- Get the email from session and auto populate this field. If necessary the user can make the change -->
-								</div>
-
+								
 								<div class="form-group">
 									<label for="jobcategory">Job Category <span></span></label>
 									<input type="text" class="form-control input" id="jobcategory">
 									<p>Load Sub Catogory depending on this Input. This Should be an autocomplete</p>
 								</div>
-								<div class="form-group">
-									<label for="subcategory">Sub Category <span>(Optional)</span></label>
-									<input type="text" class="form-control input" id="subcategory">
-									<p>Load Sub Catogory depending on the Job Category ID. This shoudl be a dropdown</p>
+								
+								<div class="row">
+									<div class="form-group col-md-8">
+										<label for="subcategory">Sub Category <span>(Optional)</span></label>
+										<input type="text" class="form-control input" id="subcategory">
+										<p>Load Sub Catogory depending on the Job Category ID. This should be a dropdown</p>
+									</div>
 								</div>
 
 								<div class="form-group">
@@ -167,43 +165,46 @@
 									</div>
 
 									<div class="form-group col-md-6">
-										<label for="">Job Category</label>
-										<select class="form-control">
-											<option>Blank 1</option>
-											<option>Blank 2</option>
-											<option>Blank 3</option>
-											<option>Blank 4</option>
-											<option>Blank 5</option>
-										</select>
+										<label for="">Salary <span>(Optional)</span></label>
+										<input type="text" class="form-control input" id="salary">
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="jobdescription">Description</label>
+									<textarea class="form-control textarea" id="description"></textarea>
+								</div>
+								
+								<div class="row">
+									<div class="form-group col-md-8">
+										<label for="appemail">Application Email / URL</label>
+										<input type="text" class="form-control input" id="appemail">
+									</div>
+									
+									<div class="form-group col-md-4">
+										<label for="negotiable">Salary Negotiable</label>
+										<input type="checkbox" class="form-control input" id="negotiable">
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label for="jobtag">Job Tags <span>(Optional)</span></label>
-									<input type="text" class="form-control input" id="jobtag">
-									<p>Comma separate tags, such as required skills or technologies, for this job.</p>
-								</div>
-
-								<div class="form-group">
-									<label for="jobdescription">Description</label>
-									<textarea class="form-control textarea"></textarea>
-								</div>
-
-								<div class="form-group">
-									<label for="appemail">Application Email / URL</label>
-									<input type="text" class="form-control input" id="appemail">
-								</div>
-
-								<div class="form-group">
-									<label for="logo">Job Image <span>(Optional)</span> <small>Max. file size: 8 MB.</small></label>
+									<label for="logo">Job Image <span>(Required)</span> <small>Max. file size: 8 MB.</small></label>
 									<div class="jobimage">
 										<input type="file" id="jobimage">
 									</div>
 								</div>
 								
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label for="closedate">Closing Date</label>
+										<input type="date" class="form-control input" id="closedate">
+									</div>
+								</div>
+								
 								<div class="form-group">
-									<label for="closedate">Closing Date</label>
-									<input type="text" class="form-control input" id="closedate">
+									<label for="jobtag">Job Tags <span>(Optional)</span></label>
+									<input type="text" class="form-control input" id="jobtag">
+									<p>Comma separate tags, such as required skills or technologies, for this job.</p>
 								</div>
 
 								<h3>Company Details</h3>
@@ -214,8 +215,8 @@
 									</div>
 
 									<div class="form-group col-md-6">
-										<label for="tagline">Tag Line</label>
-										<input type="text" class="form-control input" id="tagline">
+										<label for="website">Website <span>(Optional)</span></label>
+										<input type="text" class="form-control input" id="website">
 									</div>
 								</div>
 
@@ -223,26 +224,7 @@
 									<label for="jobtag">Description</label>
 									<textarea class="form-control textarea"></textarea>
 								</div>
-								<div class="row">
-									<div class="form-group col-md-6">
-										<label for="twitter">Twitter Username <span>(Optional)</span></label>
-										<input type="text" class="form-control input" id="twitter">
-									</div>
-									<div class="form-group col-md-6">
-										<label for="website">Website <span>(Optional)</span></label>
-										<input type="text" class="form-control input" id="website">
-									</div>
-									<div class="clearfix"></div>
-									<div class="form-group col-md-6">
-										<label for="gplus">Google+ Username <span>(Optional)</span></label>
-										<input type="text" class="form-control input" id="gplus">
-									</div>
-									<div class="form-group col-md-6">
-										<label for="fb">Facebook username <span>(Optional)</span></label>
-										<input type="text" class="form-control input" id="fb">
-									</div>
-								</div>
-
+								
 								<div class="form-group">
 									<label for="linkedin">Linkedin username <span>(Optional)</span></label>
 									<input type="text" class="form-control input" id="linkedin">

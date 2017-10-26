@@ -7,11 +7,21 @@ if (!defined('BASEPATH'))
     <?php
 
     class Jobs extends CI_Controller {
-
+	
+	public function __construct() 
+    {
+        parent::__construct();
+     
+        // load form and url helpers
+        $this->load->helper(array('form', 'url'));
+         
+        // load form_validation library
+        $this->load->library('form_validation');
+    }
+     
    
 	function LoginValidation() {
             $this->load->model('model_jobs');
-            $this->load->library('form_validation');
             $this->form_validation->set_rules("email", "email", 'required|trim|xss_clean|callback_validate');
             $this->form_validation->set_rules("password", "Password", "required|trim");
            // $name = $this->input->post('username');
