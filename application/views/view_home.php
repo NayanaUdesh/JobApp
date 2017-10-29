@@ -355,14 +355,9 @@
 											</div>
 											<div class="clearfix"></div>
 										</div><!-- Tabs content -->
-
 									</div><!-- Tabs section 1 -->
+									<div id="contract" style="display: none;" class="tab-pane fade" > <!-- Tabs section 2 -->
 								
-								
-									<!-- Tabs section 1 -->
-									<div id="contract" style="display: none;" class="tab-pane fade"><!-- Tabs section 2 -->
-
-
 									</div><!-- Tabs section 2 -->
 									<div id="full" style="display: none;" class="tab-pane fade"><!-- Tabs section 3 -->
 

@@ -19,7 +19,7 @@ echo'<td>ID</td>
 foreach($result_array as $job){
 	echo'<tr>';
 	echo'<td>'.$job['id'].'</td>';
-	echo'<td>'.$job['title'].'</td>';
+	echo'<td><h4>'.$job['title'].'</h4><p>'.$job['description'].'</p></td>';
 	echo'<td>'.$job['type'].'</td>';
 	echo'<td>'.$job['location'].'</td>';
 	echo'<td>'.$job['jobimage'].'</td>';
