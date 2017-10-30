@@ -112,32 +112,36 @@
 				</div><!-- end main page title -->
 				
 				<div class="container">
+					
+					<?php echo validation_errors(); ?>
+					
 					<div class="spacer-1">&nbsp;</div>
 					<div class="row">
 						<div class="col-md-8">
-							<form role="form" class="post-job-form">
+						<?php echo form_open("jobs/validateJobData"); ?>
+							<div role="form" class="post-job-form">
 								<div class="form-group">
 									<label for="jobtitle">Job Title</label>
-									<input type="text" class="form-control input" id="jobtitle">
+									<input type="text" class="form-control input" id="jobtitle" value="<?php echo set_value('jobtitle'); ?>">
 								</div>
 								
 								<div class="form-group">
 									<label for="jobcategory">Job Category <span></span></label>
-									<input type="text" class="form-control input" id="jobcategory">
+									<input type="text" class="form-control input" id="jobcategory" value="<?php echo set_value('jobcategory'); ?>">
 									<p>Load Sub Catogory depending on this Input. This Should be an autocomplete</p>
 								</div>
 								
 								<div class="row">
 									<div class="form-group col-md-8">
 										<label for="subcategory">Sub Category <span>(Optional)</span></label>
-										<input type="text" class="form-control input" id="subcategory">
+										<input type="text" class="form-control input" id="subcategory" value="<?php echo set_value('subcategory'); ?>">
 										<p>Load Sub Catogory depending on the Job Category ID. This should be a dropdown</p>
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label for="joblocation">Job Location</label>
-									<select class="form-control" id="joblocation">
+									<select class="form-control" id="joblocation" value="<?php echo set_value('joblocation'); ?>" placeholder="Select Location">
 										<option>Colombo</option>
 										<option>Galle</option>
 										<option>Matara</option>
@@ -156,54 +160,61 @@
 								<div class="row">
 									<div class="form-group col-md-6">
 										<label for="jobtype">Job Type</label>
-										<select class="form-control" id="jobtype">
+										<select class="form-control" id="jobtype" value="<?php echo set_value('jobtype'); ?>" placeholder="Job Type">
 											<option>Full Time</option>
 											<option>Contract</option>
 											<option>Part Time</option>
 											<option>Freelance</option>
 										</select>
 									</div>
-
-									<div class="form-group col-md-6">
-										<label for="">Salary <span>(Optional)</span></label>
-										<input type="text" class="form-control input" id="salary">
-									</div>
 								</div>
 								
 								<div class="form-group">
-									<label for="jobdescription">Description</label>
-									<textarea class="form-control textarea" id="description"></textarea>
+									<label for="jobdescription">Job Description</label>
+									<textarea class="form-control textarea" id="description" value="<?php echo set_value('description'); ?>"></textarea>
 								</div>
-								
+
 								<div class="row">
-									<div class="form-group col-md-8">
-										<label for="appemail">Application Email / URL</label>
-										<input type="text" class="form-control input" id="appemail">
+									<div class="form-group col-md-6">
+											<label for="appemail">Application Email</label>
+											<input type="text" class="form-control input" id="appemail" value="<?php echo set_value('appemail'); ?>">
 									</div>
 									
-									<div class="form-group col-md-4">
+									<div class="form-group col-md-6">
+											<label for="appemail">Application URL</label>
+											<input type="text" class="form-control input" id="appurl" value="<?php echo set_value('appurl'); ?>">
+									</div>
+								</div>
+									
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label for="">Salary <span>(Optional)</span></label>
+										<input type="text" class="form-control input" id="salary" value="<?php echo set_value('salary'); ?>">
+									</div>
+									
+									<div class="form-group col-md-3">
 										<label for="negotiable">Salary Negotiable</label>
-										<input type="checkbox" class="form-control input" id="negotiable">
+										<input type="checkbox" class="form-control input" id="negotiable" value="<?php echo set_value('negotiable'); ?>">
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label for="logo">Job Image <span>(Required)</span> <small>Max. file size: 8 MB.</small></label>
 									<div class="jobimage">
-										<input type="file" id="jobimage">
+										<input type="file" id="jobimage" value="<?php echo set_value('jobimage'); ?>">
 									</div>
 								</div>
 								
 								<div class="row">
 									<div class="form-group col-md-6">
 										<label for="closedate">Closing Date</label>
-										<input type="date" class="form-control input" id="closedate">
+										<input type="date" class="form-control input" id="closedate" value="<?php echo set_value('closedate'); ?>">
 									</div>
 								</div>
 								
 								<div class="form-group">
 									<label for="jobtag">Job Tags <span>(Optional)</span></label>
-									<input type="text" class="form-control input" id="jobtag">
+									<input type="text" class="form-control input" id="jobtag" value="<?php echo set_value('jobtag'); ?>">
 									<p>Comma separate tags, such as required skills or technologies, for this job.</p>
 								</div>
 
@@ -211,34 +222,36 @@
 								<div class="row">
 									<div class="form-group col-md-6">
 										<label for="companyname">Company Name</label>
-										<input type="text" class="form-control input" id="companyname">
+										<input type="text" class="form-control input" id="companyname" value="<?php echo set_value('companyname'); ?>">
 									</div>
 
 									<div class="form-group col-md-6">
 										<label for="website">Website <span>(Optional)</span></label>
-										<input type="text" class="form-control input" id="website">
+										<input type="text" class="form-control input" id="website" value="<?php echo set_value('website'); ?>">
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label for="jobtag">Description</label>
-									<textarea class="form-control textarea"></textarea>
+									<label for="companydesc">Description</label>
+									<textarea class="form-control textarea" id="companydesc" value="<?php echo set_value('companydesc'); ?>"></textarea>
 								</div>
 								
 								<div class="form-group">
 									<label for="linkedin">Linkedin username <span>(Optional)</span></label>
-									<input type="text" class="form-control input" id="linkedin">
+									<input type="text" class="form-control input" id="linkedin" value="<?php echo set_value('linkedin'); ?>">
 								</div>
 								<div class="form-group">
 									<label for="logo">Logo <span>(Optional)</span> <small>Max. file size: 8 MB.</small></label>
 									<div class="upload">
-										<input type="file" id="logo">
+										<input type="file" id="logo" value="<?php echo set_value('logo'); ?>">
 									</div>
 								</div>
+								<div class="spacer-1">&nbsp;</div>
 								<div class="form-group">
 									<button class="btn btn-default btn-green">SUBMIT JOB</button>
 								</div>
-							</form>
+							</div>
+						</form>
 							<div class="spacer-2">&nbsp;</div>
 						</div>
 						
