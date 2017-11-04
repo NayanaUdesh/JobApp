@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Jobs</title>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/StylesForJobTable.css"); ?>">
 </head>
 <body>
 <h2>This is Job result page</h2>

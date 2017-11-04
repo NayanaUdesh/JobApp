@@ -1,0 +1,26 @@
+table,th,td{
+	text-align: left;
+	vertical-align: top;
+}
+
+table{
+	width: 80%;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th,td{
+	height: 20px;
+	padding: 0px;
+	border-bottom: 2px dashed red;
+	margin: 0px;
+	border: 0px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+tr.hov:hover{
+	background-color: #ff2285;
+}
