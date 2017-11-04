@@ -7,20 +7,20 @@
 <body>
 <h2>This is Job result page</h2>
 <?php 
-echo '<table border=2>';
+echo '<table>';
 /*foreach ($col_header as $value) {
 	echo '<th>'.$value.'</th>';
 }*/
-echo'<td>ID</td>
-	<td>Title</td>
-	<td>Type</td>
-	<td>Location</td>
-	<td>Job Image</td>';
+echo'<th>ID</th>
+	<th>Title</th>
+	<th>Type</th>
+	<th>Location</th>
+	<th>Job Image</th>';
 
 foreach($result_array as $job){
-	echo'<tr>';
+	echo'<tr class=hov>';
 	echo'<td>'.$job['id'].'</td>';
-	echo'<td><h4>'.$job['title'].'</h4><p>'.$job['description'].'</p></td>';
+	echo'<td><h4>'.$job['title'].'</h4><p class=description>'.$job['description'].'</p></td>';
 	echo'<td>'.$job['type'].'</td>';
 	echo'<td>'.$job['location'].'</td>';
 	echo'<td>'.$job['jobimage'].'</td>';
