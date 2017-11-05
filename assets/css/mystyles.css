@@ -169,6 +169,20 @@
 
 
 /* ---------- Post JOB Page -------------- */
+
+.error {
+	color:red;
+	font-size:13px;
+	margin-bottom:-15px;
+	margin-left: 10px;
+	display: inline;
+}
+
+.form-group label{
+	display: inline;
+}
+
+
 .main-page-title {
     width: 100%;
     min-height: 104px;

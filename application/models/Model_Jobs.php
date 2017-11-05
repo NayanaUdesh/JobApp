@@ -10,7 +10,7 @@ class Model_Jobs extends CI_Model {
 
     //insert data to Job Table
     function PostJob($data) {
-        $this->db->insert("jobs", $data);
+        $this->db->insert('jobs', $data);
     }
 
 }

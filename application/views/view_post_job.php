@@ -112,146 +112,174 @@
 				</div><!-- end main page title -->
 				
 				<div class="container">
-					
-					<?php echo validation_errors(); ?>
+					<?php
+                        $this->load->helper("form");
+						if($this->session->flashdata('PostSucess')){
+							?><div class="alert alert-success">  <?php echo $this->session->flashdata('PostSucess');?></div>
+							<?php 
+						}else if($this->session->flashdata('LogIntoPostAD')){
+							?><div class="alert alert-danger"> <?php echo $this->session->flashdata('LogIntoPostAD');?></div>
+							<?php 
+						}
+						else if($this->session->flashdata('ErrorJobPost')){
+							?><div class="alert alert-danger"> <?php echo $this->session->flashdata('ErrorJobPost');?></div>
+							<?php 
+						}
+                    ?>
 					
 					<div class="spacer-1">&nbsp;</div>
 					<div class="row">
 						<div class="col-md-8">
-						<?php echo form_open("jobs/validateJobData"); ?>
-							<div role="form" class="post-job-form">
+						<?php echo form_open_multipart('jobs'); ?>
+							<div class="post-job-form">
+								
 								<div class="form-group">
-									<label for="jobtitle">Job Title</label>
+									<label for="jobtitle">Job Title</label><?php echo form_error('jobtitle'); ?>
+									<?php echo form_input(array('id' => 'jobtitle', 'name' => 'jobtitle', 'class' => 'form-control input')); ?>
+									<!--
 									<input type="text" class="form-control input" id="jobtitle" value="<?php echo set_value('jobtitle'); ?>">
+									-->
 								</div>
 								
 								<div class="form-group">
-									<label for="jobcategory">Job Category <span></span></label>
-									<input type="text" class="form-control input" id="jobcategory" value="<?php echo set_value('jobcategory'); ?>">
+									<label for="jobcategory">Job Category <span></span></label> <?php echo form_error('jobcategory'); ?>
+									<?php echo form_input(array('id' => 'jobcategory', 'name' => 'jobcategory', 'class' => 'form-control input')); ?>
 									<p>Load Sub Catogory depending on this Input. This Should be an autocomplete</p>
 								</div>
 								
 								<div class="row">
 									<div class="form-group col-md-8">
-										<label for="subcategory">Sub Category <span>(Optional)</span></label>
-										<input type="text" class="form-control input" id="subcategory" value="<?php echo set_value('subcategory'); ?>">
+										<label for="subcategory">Sub Category <span>(Optional)</span></label><?php echo form_error('subcategory'); ?>
+										<?php echo form_input(array('id' => 'subcategory', 'name' => 'subcategory', 'class' => 'form-control input')); ?>
 										<p>Load Sub Catogory depending on the Job Category ID. This should be a dropdown</p>
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label for="joblocation">Job Location</label>
-									<select class="form-control" id="joblocation" value="<?php echo set_value('joblocation'); ?>" placeholder="Select Location">
-										<option>Colombo</option>
-										<option>Galle</option>
-										<option>Matara</option>
-										<option>Kandy</option>
-										<option>Trincomalee</option>
-										<option>Negambo</option>
-										<option>Kiribathgoda</option>
-										<option>Kadawatha</option>
-										<option>Wattala</option>
-										<option>Malabe</option>
-										<option>Homagama</option>
-										<option>Piliyadala</option>
-									</select>
+									<label for="joblocation">Job Location</label> <?php echo form_error('joblocation'); ?>
+									<?php
+											$joblocations = array(
+												'colombo' => 'Colombo',
+												'galle' => 'Galle',
+												'matara' => 'Matara',
+												'kandy' => 'Kandy',
+												'trincomalee' => 'Trincomalee',
+												'negambo' => 'Negambo',
+												'kadawatha' => 'Kadawatha',
+												'wattala' => 'Wattala',
+												'malabe' => 'Malabe',
+												'homagama' => 'Homagama',
+												'piliyandala' => 'Piliyadala'
+											);										
+											
+											$JobLocSettings = array('id' => 'joblocation', 'class' => 'form-control', 'placeholder' => 'Select Job Location');
+										
+										echo form_dropdown('joblocation', $joblocations, '', $JobLocSettings ) ?>
 								</div>
 
 								<div class="row">
 									<div class="form-group col-md-6">
-										<label for="jobtype">Job Type</label>
-										<select class="form-control" id="jobtype" value="<?php echo set_value('jobtype'); ?>" placeholder="Job Type">
-											<option>Full Time</option>
-											<option>Contract</option>
-											<option>Part Time</option>
-											<option>Freelance</option>
-										</select>
+										<label for="jobtype">Job Type</label> <?php echo form_error('jobtype'); ?>
+										<?php
+											$jobTypeInputs = array(
+												'fulltime' => 'Full Time',
+												'contract' => 'Contact',
+												'parttime' => 'Part Time',
+												'freelance' => 'Freelance'
+											);										
+											
+											$JobTypeSettings = array('id' => 'jobtype', 'class' => 'form-control');
+										
+										echo form_dropdown('jobtype', $jobTypeInputs, '', $JobTypeSettings ) ?>
 									</div>
 								</div>
 								
 								<div class="form-group">
-									<label for="jobdescription">Job Description</label>
-									<textarea class="form-control textarea" id="description" value="<?php echo set_value('description'); ?>"></textarea>
+									<label for="jobdescription">Job Description</label><?php echo form_error('description'); ?>
+									<?php echo form_textarea(array('id' => 'description', 'name' => 'description', 'class' => 'form-control textarea', 'rows' => '2')); ?>
+									<!--
+										<textarea class="form-control textarea" id="description" value="<?php echo set_value('description'); ?>"></textarea>
+									-->
 								</div>
 
 								<div class="row">
 									<div class="form-group col-md-6">
-											<label for="appemail">Application Email</label>
-											<input type="text" class="form-control input" id="appemail" value="<?php echo set_value('appemail'); ?>">
+										<label for="appemail">Application Email</label><?php echo form_error('appemail'); ?>
+										<?php echo form_input(array('id' => 'appemail', 'name' => 'appemail', 'class' => 'form-control input')); ?>
 									</div>
 									
 									<div class="form-group col-md-6">
-											<label for="appemail">Application URL</label>
-											<input type="text" class="form-control input" id="appurl" value="<?php echo set_value('appurl'); ?>">
+										<label for="appemail">Application URL</label><?php echo form_error('appurl'); ?>
+										<?php echo form_input(array('id' => 'appurl', 'name' => 'appurl', 'class' => 'form-control input')); ?>
 									</div>
 								</div>
 									
 								<div class="row">
 									<div class="form-group col-md-6">
-										<label for="">Salary <span>(Optional)</span></label>
-										<input type="text" class="form-control input" id="salary" value="<?php echo set_value('salary'); ?>">
+										<label for="">Salary <span>(Optional)</span></label><?php echo form_error('salary'); ?>
+										<?php echo form_input(array('id' => 'salary', 'name' => 'salary', 'class' => 'form-control input')); ?>
 									</div>
 									
-									<div class="form-group col-md-3">
-										<label for="negotiable">Salary Negotiable</label>
-										<input type="checkbox" class="form-control input" id="negotiable" value="<?php echo set_value('negotiable'); ?>">
+									<div class="form-group col-md-6">
+										<label for="negotiable">Salary Negotiable</label><?php echo form_error('negotiable'); ?>
+										<?php echo form_checkbox(array('id' => 'negotiable', 'name' => 'negotiable', 'class' => 'form-control input', 'value' => '1')); ?>
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label for="logo">Job Image <span>(Required)</span> <small>Max. file size: 8 MB.</small></label>
+									<label for="logo">Job Image <span>(Required)</span> <small>Max. file size: 8 MB.</small></label> <?php echo form_error('jobimage'); ?>
 									<div class="jobimage">
-										<input type="file" id="jobimage" value="<?php echo set_value('jobimage'); ?>">
+										<?php echo form_input(array('id' => 'jobimage', 'name' => 'jobimage', 'type' => 'file')); ?>
 									</div>
 								</div>
 								
 								<div class="row">
 									<div class="form-group col-md-6">
-										<label for="closedate">Closing Date</label>
-										<input type="date" class="form-control input" id="closedate" value="<?php echo set_value('closedate'); ?>">
+										<label for="closedate">Closing Date</label><?php echo form_error('closedate'); ?>
+										<?php echo form_input(array('id' => 'closedate', 'name' => 'closedate', 'class' => 'form-control input', 'type' => 'date')); ?>
 									</div>
 								</div>
 								
 								<div class="form-group">
-									<label for="jobtag">Job Tags <span>(Optional)</span></label>
-									<input type="text" class="form-control input" id="jobtag" value="<?php echo set_value('jobtag'); ?>">
+									<label for="jobtag">Job Tags <span>(Optional)</span></label><?php echo form_error('jobtag'); ?>
+									<?php echo form_input(array('id' => 'jobtag', 'name' => 'jobtag', 'class' => 'form-control input')); ?>
 									<p>Comma separate tags, such as required skills or technologies, for this job.</p>
 								</div>
 
 								<h3>Company Details</h3>
 								<div class="row">
 									<div class="form-group col-md-6">
-										<label for="companyname">Company Name</label>
-										<input type="text" class="form-control input" id="companyname" value="<?php echo set_value('companyname'); ?>">
+										<label for="companyname">Company Name</label><?php echo form_error('companyname'); ?>
+										<?php echo form_input(array('id' => 'companyname', 'name' => 'companyname', 'class' => 'form-control input')); ?>
 									</div>
 
 									<div class="form-group col-md-6">
-										<label for="website">Website <span>(Optional)</span></label>
-										<input type="text" class="form-control input" id="website" value="<?php echo set_value('website'); ?>">
+										<label for="website">Website <span>(Optional)</span></label><?php echo form_error('website'); ?>
+										<?php echo form_input(array('id' => 'website', 'name' => 'website', 'class' => 'form-control input')); ?>
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label for="companydesc">Description</label>
-									<textarea class="form-control textarea" id="companydesc" value="<?php echo set_value('companydesc'); ?>"></textarea>
+									<label for="companydesc">Description</label><?php echo form_error('companydesc'); ?>
+									<?php echo form_textarea(array('id' => 'companydesc', 'name' => 'companydesc', 'class' => 'form-control textarea', 'rows' => '2')); ?>
 								</div>
 								
 								<div class="form-group">
-									<label for="linkedin">Linkedin username <span>(Optional)</span></label>
-									<input type="text" class="form-control input" id="linkedin" value="<?php echo set_value('linkedin'); ?>">
+									<label for="linkedin">Linkedin username <span>(Optional)</span></label><?php echo form_error('linkedin'); ?>
+									<?php echo form_input(array('id' => 'linkedin', 'name' => 'linkedin', 'class' => 'form-control input')); ?>
 								</div>
 								<div class="form-group">
-									<label for="logo">Logo <span>(Optional)</span> <small>Max. file size: 8 MB.</small></label>
+									<label for="logo">Logo <span>(Optional)</span> <small>Max. file size: 2 MB.</small></label> <?php echo form_error('logo'); ?>
 									<div class="upload">
-										<input type="file" id="logo" value="<?php echo set_value('logo'); ?>">
+										<?php echo form_input(array('id' => 'logo', 'name' => 'logo', 'type' => 'file')); ?>
 									</div>
 								</div>
 								<div class="spacer-1">&nbsp;</div>
 								<div class="form-group">
-									<button class="btn btn-default btn-green">SUBMIT JOB</button>
+									<?php echo form_submit(array('id' => 'submit', 'value' => 'Submit', 'class' => 'btn btn-default btn-green')); ?>
 								</div>
 							</div>
-						</form>
+						<?php echo form_close(); ?>
 							<div class="spacer-2">&nbsp;</div>
 						</div>
 						
