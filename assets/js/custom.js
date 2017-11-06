@@ -78,9 +78,7 @@ $('input.date-pick, .input-daterange, .date-pick-inline').datepicker({
     todayHighlight: true
 });
 
-
-
-$('input.date-pick, .input-daterange input[name="start"]').datepicker('setDate', 'today');
+$('input.date-pick, .input-daterange input[name="start"]').datepicker();
 $('.input-daterange input[name="end"]').datepicker('setDate', '+7d');
 
 $('input.time-pick').timepicker({
@@ -92,51 +90,6 @@ $('input.date-pick-years').datepicker({
     startView: 2
 });
 
-
-
-
-$('.booking-item-price-calc .checkbox label').click(function() {
-    var checkbox = $(this).find('input'),
-        // checked = $(checkboxDiv).hasClass('checked'),
-        checked = $(checkbox).prop('checked'),
-        price = parseInt($(this).find('span.pull-right').html().replace('$', '')),
-        eqPrice = $('#car-equipment-total'),
-        tPrice = $('#car-total'),
-        eqPriceInt = parseInt(eqPrice.attr('data-value')),
-        tPriceInt = parseInt(tPrice.attr('data-value')),
-        value,
-        animateInt = function(val, el, plus) {
-            value = function() {
-                if (plus) {
-                    return el.attr('data-value', val + price);
-                } else {
-                    return el.attr('data-value', val - price);
-                }
-            };
-            return $({
-                val: val
-            }).animate({
-                val: parseInt(value().attr('data-value'))
-            }, {
-                duration: 500,
-                easing: 'swing',
-                step: function() {
-                    if (plus) {
-                        el.text(Math.ceil(this.val));
-                    } else {
-                        el.text(Math.floor(this.val));
-                    }
-                }
-            });
-        };
-    if (!checked) {
-        animateInt(eqPriceInt, eqPrice, true);
-        animateInt(tPriceInt, tPrice, true);
-    } else {
-        animateInt(eqPriceInt, eqPrice, false);
-        animateInt(tPriceInt, tPrice, false);
-    }
-});
 
 
 $('div.bg-parallax').each(function() {

@@ -179,7 +179,35 @@
 }
 
 .form-group label{
-	display: inline;
+	display: inline-block;
+	font-weight: 300;
+	font-size: 16px;
+    color: #4a4f4f;
+    margin: 0 0 10px 0;
+}
+
+
+.form-group .input-icon-sm {
+	position: absolute;
+  width: 32px;
+  height: 32px;
+  line-height: 24px;
+  display: block;
+  top: 36px;
+  left: 1px;
+  text-align: center;
+  color: #b3b3b3;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+#negotiable {
+	width: 10%;
+	margin: 0px 0 0;
 }
 
 
@@ -286,3 +314,13 @@
 }
 
 /* ---------- END Advertising Pricing -------------- */
+
+
+
+
+
+
+
+
+
+

@@ -21,7 +21,7 @@
     <link href="<?php echo base_url("assets/css/icomoon.css"); ?>" rel="stylesheet">
     <link href="<?php echo base_url("assets/css/mystyles.css"); ?>" rel="stylesheet">
     <link href="<?php echo base_url("assets/css/styles.css"); ?>" rel="stylesheet">
-	
+
 	<script src="<?php echo base_url("assets/js/modernizr.js"); ?>"></script>
 
 </head>
@@ -222,19 +222,10 @@
 									
 									<div class="form-group col-md-6">
 										<label for="negotiable">Salary Negotiable</label><?php echo form_error('negotiable'); ?>
-										<?php echo form_checkbox(array('id' => 'negotiable', 'name' => 'negotiable', 'class' => 'form-control input', 'value' => '')); ?>
+										<?php echo form_checkbox(array('id' => 'negotiable', 'name' => 'negotiable', 'class' => 'form-control input', 'value' => '1')); ?>
 									</div>
 								</div>
 
-								<div class="row">
-									<div class="form-group col-md-6">
-										<div class="form-group form-group form-group-icon-left"><i class="fa fa-calendar input-icon-sm input-icon-highlight"></i>
-											<label for="closedate">Closing Date</label><?php echo form_error('closedate'); ?>
-											<?php echo form_input(array('id' => 'closedate', 'name' => 'closedate', 'class' => 'date-pick form-control', 'type' => 'text', 'data-date-format' => 'M d, D')); ?>
-										</div>
-									</div>
-								</div>
-								
 								<div class="form-group">
 									<label for="logo">Job Image <span>(Required)</span> <small>Max. file size: 8 MB.</small></label> <?php echo form_error('jobimage'); ?>
 									<div class="jobimage">
@@ -242,9 +233,16 @@
 									</div>
 								</div>
 								
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label for="closedate">Closing Date</label><?php echo form_error('closedate'); ?>
+										<?php echo form_input(array('id' => 'closedate', 'name' => 'closedate', 'class' => 'form-control input', 'type' => 'date')); ?>
+									</div>
+								</div>
+								
 								<div class="form-group">
 									<label for="jobtag">Job Tags <span>(Optional)</span></label><?php echo form_error('jobtag'); ?>
-									<?php echo form_input(array('id' => 'jobtag', 'name' => 'jobtag', 'class' => 'form-control input', 'data-role' => 'tagsinput')); ?>
+									<?php echo form_input(array('id' => 'jobtag', 'name' => 'jobtag', 'class' => 'form-control input')); ?>
 									<p>Comma separate tags, such as required skills or technologies, for this job.</p>
 								</div>
 
