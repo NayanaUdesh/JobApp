@@ -15,7 +15,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600' rel='stylesheet' type='text/css'>
     <!-- /GOOGLE FONTS -->
     
-
+	<link href="<?php echo base_url("assets/css/jquery-ui.css"); ?>" rel="stylesheet">
     <link href="<?php echo base_url("assets/css/bootstrap.css"); ?>" rel="stylesheet">
     <link href="<?php echo base_url("assets/css/font-awesome.css"); ?>" rel="stylesheet">
     <link href="<?php echo base_url("assets/css/icomoon.css"); ?>" rel="stylesheet">
@@ -88,7 +88,7 @@
                 <div class="nav">
                     <ul class="slimmenu" id="slimmenu">
                         <li class="active"><a href="<?php echo base_url(); ?>">Home</a> </li>
-                        <li><a href="success-payment.html">All Jobs</a> </li>
+                        <li><a href="<?php echo base_url(); ?>search">All Jobs</a> </li>
                         <li><a href="<?php echo base_url(); ?>menu/PostJob">Post Jobs</a> </li>
                         <li><a href="<?php echo base_url(); ?>menu/Advertise">Advertise</a> </li>
                         <li><a href="<?php echo base_url(); ?>menu/AboutPage">About Us</a> </li>
@@ -102,124 +102,141 @@
         
         
         <!-- TOP AREA -->
-        <div class="top-area show-onload">
-            <div class="bg-holder full">
+        <div class="top-area show-onload" id="top-area">
+            <div class="bg-holder-main full">
                 <div class="bg-front full-height bg-front-mob-rel">
-                    <div class="container full-height">
+                    <div class="container">
                         <div class="rel full-height">
                             
-                            <div class="search-job">
-                                <div class="search-main">
-                                    <div class="content">
+                            <div class="search-tabs search-tabs-bg">
+                                <div class="tabbable">
+                                    <div class="tab-content">
                                         <br/>
-                                        <h1>Search Jobs</h1>
-                                        <form>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
-                                                        <label>Job Title / Designation</label>
-                                                        <input class="typeahead form-control" placeholder="Input keyword" type="text" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="input-daterange">
-                                                        <div class="row">
-                                                            <div class="col-md-5">
-                                                                <div class="form-group form-group-icon-left"><i class="fa fa-briefcase input-icon input-icon-highlight"></i>
-                                                                    <label>Job Category</label>
-                                                                    <input class="form-control" name="job_type" type="text" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group form-group-icon-left"><i class="fa fa-map-marker input-icon input-icon-highlight"></i>
-                                                                    <label>Job Location</label>
-                                                                    <select class="form-control" name="location">                                                                   
-                                                                        <option>All</option>
-                                                                        <option>Colombo</option>
-                                                                        <option>Kandy</option>
-                                                                        <option>Galle</option>
-                                                                        <option>Matara</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            
-                                                             <div class="col-md-3">
-                                                                <div class="form-group form-group-lg form-group-select-plus">
-                                                                    <br/>
-                                                                    
-                                                                </div>
-                                                             </div>
-                                                             
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="btn btn-primary" type="submit">Search Job</button>
-                                        </form>
-                                    </div>
+										<div class="tab-pane fade in active">
+											<h1>Search Jobs</h1>
+											<form action="search/ajaxPaginationData/"  method="post">
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group form-group-icon-left"><i class="fa fa-map-marker input-icon"></i>
+															<label>Job Title / Designation</label>
+															<input class="typeahead form-control" name="jobsubcatauto" id="jobsubcatauto" placeholder="Input Keyword" />
+														</div>
+													</div>
+													
+													<div class="col-md-6">
+														<div class="input-daterange">
+															<div class="row">
+																<div class="col-md-5">
+																	<div class="form-group form-group-icon-left"><i class="fa fa-briefcase input-icon input-icon-highlight"></i>
+																		<label>Job Category</label>
+																		<select class="form-control" name="job_type" id="job_type">
+																			<option>All</option>
+																			<option>Full Time</option>
+																			<option>Part Time</option>
+																			<option>Contract</option>
+																			<option>Freelence</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="col-md-4">
+																	<div class="form-group form-group-icon-left"><i class="fa fa-map-marker input-icon input-icon-highlight"></i>
+																		<label>Job Location</label>
+																		<select class="form-control" name="joblocation" id="joblocation">                                                             
+																			<option>All</option>
+																			<option>Colombo</option>
+																			<option>Kandy</option>
+																			<option>Galle</option>
+																			<option>Matara</option>
+																		</select>
+																	</div>
+																</div>
+																
+																 <div class="col-md-3">
+																	<div class="form-group form-group-lg form-group-select-plus">
+																		<br/>
+																		
+																	</div>
+																 </div>
+																 
+															</div>
+														</div>
+													</div>
+												</div>
+												<button class="btn btn-primary" type="submit" >Search Job</button>
+											</form>
+											
+											<input id="toggle-filters" type="checkbox">
+											<label for="toggle-filters" id="toggle-label">Jobs by Category</label>
+											<div class="row" id="expand">
+												<div class="col-md-3">
+													<ul class="job-category">
+														<li><a href="" >Software Engineer Dev - IT <span>(503)</span></a></li>
+														<li><a href="" >Quality Assuarance - IT <span>(503)</span></a></li>
+														<li><a href="" >Networking - IT<span>(503)</span></a></li>
+														<li><a href="" >Hardware - IT <span>(503)</span></a></li>
+														<li><a href="" >Banking & Insurance<span>(503)</span></a></li>
+														<li><a href="" >HR & Recruitment <span>(503)</span></a></li>
+													</ul>
+												</div>
+												<div class="col-md-3">
+													<ul class="job-category">
+														<li><a href="" >Accounting & Finance <span>(503)</span></a></li>
+														<li><a href="" >Civil Engineer <span>(503)</span></a></li>
+														<li><a href="" >Tourism & Hospitality <span>(503)</span></a></li>
+														<li><a href="" >Apperal/ Clothing <span>(503)</span></a></li>
+														<li><a href="" >Mechanical Engineer <span>(503)</span></a></li>
+														<li><a href="" >Fashion Design & Beauty <span>(503)</span></a></li>
+													</ul>
+												</div>
+												<div class="col-md-3">
+													<ul class="job-category">
+														<li><a href="" >Public & Customer Relations <span>(503)</span></a></li>
+														<li><a href="" >Electrician <span>(503)</span></a></li>
+														<li><a href="" >Manufacturing <span>(503)</span></a></li>
+														<li><a href="" >Quality Control <span>(503)</span></a></li>
+														<li><a href="" >Imports & Exports <span>(503)</span></a></li>
+														<li><a href="" >Agriculture & Environment <span>(503)</span></a></li>
+													</ul>
+												</div>
+												<div class="col-md-3">
+													<ul class="job-category">
+														<li><a href="" >Sales & Marketing <span>(503)</span></a></li>
+														<li><a href="" >Media & Communication <span>(503)</span></a></li>
+														<li><a href="" >Hospital & Nursing <span>(503)</span></a></li>
+														<li><a href="" >Transport & Ticketing <span>(503)</span></a></li>
+														<li><a href="" >Sports & Fitness <span>(503)</span></a></li>
+														<li><a href="" >Other <span>(503)</span></a></li>
+													</ul>
+												</div>
+											</div>
+											
+										</div>
+									</div>
                                 </div>
                             </div>
 							
-							<div class="row">
-								<div class="col-md-3">
-									<ul class="job-category">
-										<li><a href="" >Software Engineer Dev - IT <span>(503)</span></a></li>
-										<li><a href="" >Quality Assuarance - IT <span>(503)</span></a></li>
-										<li><a href="" >Networking - IT<span>(503)</span></a></li>
-										<li><a href="" >Hardware - IT <span>(503)</span></a></li>
-										<li><a href="" >Banking & Insurance<span>(503)</span></a></li>
-										<li><a href="" >HR & Recruitment <span>(503)</span></a></li>
-										<li><a href="" >Accounting & Finance <span>(503)</span></a></li>
-									</ul>
-								</div>
-								<div class="col-md-3">
-									<ul class="job-category">
-										<li><a href="" >Civil Engineer <span>(503)</span></a></li>
-										<li><a href="" >Architect <span>(503)</span></a></li>
-										<li><a href="" >Tourism & Hospitality <span>(503)</span></a></li>
-										<li><a href="" >Apperal/ Clothing <span>(503)</span></a></li>
-										<li><a href="" >Mechanical Engineer <span>(503)</span></a></li>
-										<li><a href="" >Security <span>(503)</span></a></li>
-										<li><a href="" >Fashion Design & Beauty <span>(503)</span></a></li>
-									</ul>
-								</div>
-								<div class="col-md-3">
-									<ul class="job-category">
-										<li><a href="" >Public & Customer Relations <span>(503)</span></a></li>
-										<li><a href="" >Electrician <span>(503)</span></a></li>
-										<li><a href="" >Manufacturing <span>(503)</span></a></li>
-										<li><a href="" >Quality Control <span>(503)</span></a></li>
-										<li><a href="" >Imports & Exports <span>(503)</span></a></li>
-										<li><a href="" >Agriculture & Environment <span>(503)</span></a></li>
-										<li><a href="" >Office Admin <span>(503)</span></a></li>
-									</ul>
-								</div>
-								<div class="col-md-3">
-									<ul class="job-category">
-										<li><a href="" >Sales & Marketing <span>(503)</span></a></li>
-										<li><a href="" >Media & Communication <span>(503)</span></a></li>
-										<li><a href="" >Hospital & Nursing <span>(503)</span></a></li>
-										<li><a href="" >Teaching <span>(503)</span></a></li>
-										<li><a href="" >Transport & Ticketing <span>(503)</span></a></li>
-										<li><a href="" >Sports & Fitness <span>(503)</span></a></li>
-										<li><a href="" >Other <span>(503)</span></a></li>
-									</ul>
-								</div>
-							</div>
+							
                         </div>
                     </div>
                 </div>
+				
+				<div class="owl-carousel owl-slider owl-carousel-area visible-lg" id="owl-carousel-slider">
+						<div class="bg-holder full">
+							<div class="bg-mask"></div>
+							<div class="bg-blur" style="background-image:url(<?php echo base_url("assets/img/home.jpg");?>);"></div>
+						</div>
+				</div>
             </div>
         </div>
         <!-- END TOP AREA  -->
         
-	<div class="gap gap-small"></div>
+	<!-- <div class="gap gap-small"></div> -->
 
 	<div class="bg-holder" style="background-color:rgba(177, 154, 168, 0.3); padding-top:15px;">
         <div class="container">
             <div class="row">
 					<div class="col-md-8">
-						<h4><i class="glyphicon glyphicon-briefcase"></i> Recent Job</h4>
+						<h4><i class="glyphicon glyphicon-briefcase"></i>Open Job Opportunities</h4>
 						<div id="tab-container" class="tab-container"><!-- Start Tabs -->
 							<ul class="nav nav-tabs clearfix">
 								<li class="active"><a data-toggle="tab" href="#all">All</a></li>
@@ -402,10 +419,10 @@
         </div>
 	</div>
 		
-		
+<!--		
         <div class="bg-holder">
             <div class="bg-mask"></div>
-            <div class="bg-img" style="background-image:url(img/2048x1293.png);"></div>
+             <div class="bg-img" style="background-image:url(img/2048x1293.png);"></div> 
             <div class="bg-content">
                 <div class="container">
                     <div class="gap gap-big text-center text-white">
@@ -440,8 +457,8 @@
 
 
         </div>
-
-
+-->		
+		
 
         
         
@@ -450,7 +467,7 @@
                 <div class="row row-wrap">
                     <div class="col-md-3">
                         <a class="logo" href="index.html">
-                            <img src="img/logo-invert.png" alt="Image Alternative text" title="Image Title" />
+                            <img src="<?php echo base_url("assets/img/logo-invert.png");?>" alt="Image Alternative text" title="Image Title" />
                         </a>
                         <p class="mb20">Looking to post your vacancy for free or ooking for a job? Try Lk Jobs</p>
                         <ul class="list list-horizontal list-space">
@@ -508,9 +525,9 @@
                 </div>
             </div>
         </footer>
-      
 
         <script src="<?php echo base_url("assets/js/jquery.js"); ?>"></script>
+		<script src="<?php echo base_url("assets/js/jquery-ui.js"); ?>"></script>
         <script src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
         <script src="<?php echo base_url("assets/js/slimmenu.js"); ?>"></script>
         <script src="<?php echo base_url("assets/js/bootstrap-datepicker.js"); ?>"></script>

@@ -1190,7 +1190,10 @@ ul.slimmenu.slimmenu-collapsed li .slimmenu-sub-collapser > i {
 }
 .search-tabs-bg > .tabbable >.tab-content > .tab-pane {
   background: #fff;
-  padding: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 0px;
+  padding-bottom: 1px;
   -webkit-box-shadow: 0 2px 1px rgba(0,0,0,0.15);
   box-shadow: 0 2px 1px rgba(0,0,0,0.15);
 }
@@ -1865,9 +1868,9 @@ body {
 }
 .top-area,
 .special-area {
-  height: 400px;
+  height: 280px;
   position: relative;
-  overflow: hidden;
+  
 }
 @media (max-width:992px) {
   .top-area,
@@ -1968,7 +1971,7 @@ body {
 }
 .bg-holder > .bg-blur {
   width: 50% !important;
-  height: 50% !important;
+  height: 50% !important;  /* Updated this height value from 50% */
   -webkit-transform-origin: 1% 1%;
   -moz-transform-origin: 1% 1%;
   -o-transform-origin: 1% 1%;

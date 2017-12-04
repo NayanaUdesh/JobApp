@@ -1,0 +1,7 @@
+1) Search functionality
+2) Job category filter
+3) Combining Nayana's code to the Main page
+4) Add pagination to listed jobs ( for tabs )
+5) Reset Password
+6) Auto complete functionality
+7) Navigate to get Company details after registeration and email verification.

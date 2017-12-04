@@ -365,18 +365,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a>
-                        </li>
-                        <li><a href="#">All Jobs</a>
-                        </li>
-                        <li><a href="#">Post Jobs</a>
-                        </li>
-                        <li><a href="#">Advertise</a>
-                        </li>
-                        <li><a href="#">About Us</a>
-                        </li>
-                        <li><a href="#">Contact Us</a>
-                        </li>
+                        <li><a href="<?php echo base_url(); ?>">Home</a> </li>
+                        <li><a href="<?php echo base_url(); ?>search">All Jobs</a> </li>
+                        <li class="active"><a href="<?php echo base_url(); ?>menu/PostJob">Post Jobs</a> </li>
+                        <li><a href="<?php echo base_url(); ?>menu/Advertise">Advertise</a> </li>
+                        <li><a href="<?php echo base_url(); ?>menu/AboutPage">About Us</a> </li>
+                        <li><a href="<?php echo base_url(); ?>menu/ContactPage">Contact Us</a> </li>
                     </ul>
                 </div>
             </div>

@@ -48,23 +48,25 @@ $('.form-group').each(function() {
     });
 });
 
-$('.typeahead').typeahead({
+
+
+$('#jobsubcatauto').typeahead({
     hint: true,
     highlight: true,
-    minLength: 3,
-    limit: 8
+    minLength: 2,
+    limit: 20
 }, {
     source: function(q, cb) {
         return $.ajax({
             dataType: 'json',
             type: 'get',
-            url: 'http://gd.geobytes.com/AutoCompleteCity?callback=?&q=' + q,
-            chache: false,
+            url: '/jobapp/autocomplete/lookup?term=' + q,
+            chache: true,
             success: function(data) {
                 var result = [];
                 $.each(data, function(index, val) {
                     result.push({
-                        value: val
+                        value: val.value
                     });
                 });
                 cb(result);
@@ -72,6 +74,11 @@ $('.typeahead').typeahead({
         });
     }
 });
+
+
+
+
+
 
 
 $('input.date-pick, .input-daterange, .date-pick-inline').datepicker({
@@ -89,7 +96,6 @@ $('input.time-pick').timepicker({
 $('input.date-pick-years').datepicker({
     startView: 2
 });
-
 
 
 $('div.bg-parallax').each(function() {
@@ -135,31 +141,6 @@ $(document).ready(
 
 	
 
-        // Owl Carousel
-        var owlCarousel = $('#owl-carousel'),
-            owlItems = owlCarousel.attr('data-items'),
-            owlCarouselSlider = $('#owl-carousel-slider'),
-            owlNav = owlCarouselSlider.attr('data-nav');
-        // owlSliderPagination = owlCarouselSlider.attr('data-pagination');
-
-        owlCarousel.owlCarousel({
-            items: owlItems,
-            navigation: true,
-            navigationText: ['', '']
-        });
-
-        owlCarouselSlider.owlCarousel({
-            slideSpeed: 300,
-            paginationSpeed: 400,
-            // pagination: owlSliderPagination,
-            singleItem: true,
-            navigation: true,
-            navigationText: ['', ''],
-            transitionStyle: 'fade',
-            autoPlay: 4500
-        });
-
-
     // footer always on bottom
     var docHeight = $(window).height();
    var footerHeight = $('#main-footer').height();
@@ -168,30 +149,16 @@ $(document).ready(
    if (footerTop < docHeight) {
     $('#main-footer').css('margin-top', (docHeight - footerTop) + 'px');
    }
-    }
-
-
+   
+   
+   
+   
+   
+   
+    
+}
+	
 );
-
-
-$('.nav-drop').dropit();
-
-
-$("#price-slider").ionRangeSlider({
-    min: 130,
-    max: 575,
-    type: 'double',
-    prefix: "$",
-    // maxPostfix: "+",
-    prettify: false,
-    hasGrid: true
-});
-
-$('.i-check, .i-radio').iCheck({
-    checkboxClass: 'i-check',
-    radioClass: 'i-radio'
-});
-
 
 
 $('.booking-item-review-expand').click(function(event) {
@@ -248,9 +215,6 @@ $('.booking-item-container').children('.booking-item').click(function(event) {
 });
 
 
-$('.form-group-cc-number input').payment('formatCardNumber');
-$('.form-group-cc-date input').payment('formatCardExpiry');
-$('.form-group-cc-cvc input').payment('formatCardCVC');
 
 
 
@@ -343,25 +307,7 @@ $('.form-group-select-plus').each(function() {
         select.removeClass('hidden');
     });
 });
-// Responsive videos
-$(document).ready(function() {
-    $("body").fitVids();
-});
 
-$(function($) {
-    $("#twitter").tweet({
-        username: "remtsoy", //!paste here your twitter username!
-        count: 3
-    });
-});
-
-$(function($) {
-    $("#twitter-ticker").tweet({
-        username: "remtsoy", //!paste here your twitter username!
-        page: 1,
-        count: 20
-    });
-});
 
 $(document).ready(function() {
     var ul = $('#twitter-ticker').find(".tweet-list");
@@ -376,69 +322,6 @@ $(document).ready(function() {
         }, 5000);
     };
     ticker();
-});
-$(function() {
-    $('#ri-grid').gridrotator({
-        rows: 4,
-        columns: 8,
-        animType: 'random',
-        animSpeed: 1200,
-        interval: 1200,
-        step: 'random',
-        preventClick: false,
-        maxStep: 2,
-        w992: {
-            rows: 5,
-            columns: 4
-        },
-        w768: {
-            rows: 6,
-            columns: 3
-        },
-        w480: {
-            rows: 8,
-            columns: 3
-        },
-        w320: {
-            rows: 5,
-            columns: 4
-        },
-        w240: {
-            rows: 6,
-            columns: 4
-        }
-    });
-
-});
-
-
-$(function() {
-    $('#ri-grid-no-animation').gridrotator({
-        rows: 4,
-        columns: 8,
-        slideshow: false,
-        w1024: {
-            rows: 4,
-            columns: 6
-        },
-        w768: {
-            rows: 3,
-            columns: 3
-        },
-        w480: {
-            rows: 4,
-            columns: 4
-        },
-        w320: {
-            rows: 5,
-            columns: 4
-        },
-        w240: {
-            rows: 6,
-            columns: 4
-        }
-    });
-
 });
 
 var tid = setInterval(tagline_vertical_slide, 2500);
@@ -460,4 +343,25 @@ function tagline_vertical_slide() {
 
 function abortTimer() { // to be called when you want to stop the timer
     clearInterval(tid);
+}
+
+
+
+function searchFilter(page_num) {
+    page_num = page_num?page_num:0;
+    var keywords = $('#jobsubcatauto').val();
+    var sortBy = $('#job_type').val();
+	var loc = $('#job_location').val();
+    $.ajax({
+        type: 'POST',
+        url: 'search/ajaxPaginationData/'+page_num,
+        data:'page='+page_num+' &keywords='+keywords+' &sortBy='+sortBy+' &location='+loc,
+        beforeSend: function () {
+            $('.loading').show();
+        },
+        success: function (html) {
+            $('#postList').html(html);
+            $('.loading').fadeOut("slow");
+        }
+    });
 }
