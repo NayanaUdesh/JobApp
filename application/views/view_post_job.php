@@ -143,14 +143,14 @@
 								
 								<div class="form-group">
 									<label for="jobcategory">Job Category <span></span></label> <?php echo form_error('jobcategory'); ?>
-									<?php echo form_input(array('id' => 'jobcategory', 'name' => 'jobcategory', 'class' => 'form-control input')); ?>
+									<?php echo form_input(array('id' => 'postjobcategory', 'name' => 'postjobcategory', 'class' => 'form-control input')); ?>
 									<p>Load Sub Catogory depending on this Input. This Should be an autocomplete</p>
 								</div>
 								
 								<div class="row">
 									<div class="form-group col-md-8">
 										<label for="subcategory">Sub Category <span>(Optional)</span></label><?php echo form_error('subcategory'); ?>
-										<?php echo form_input(array('id' => 'subcategory', 'name' => 'subcategory', 'class' => 'form-control input')); ?>
+										<?php echo form_input(array('id' => 'postsubcategory', 'name' => 'postsubcategory', 'class' => 'form-control input')); ?>
 										<p>Load Sub Catogory depending on the Job Category ID. This should be a dropdown</p>
 									</div>
 								</div>
@@ -183,7 +183,7 @@
 										<?php
 											$jobTypeInputs = array(
 												'fulltime' => 'Full Time',
-												'contract' => 'Contact',
+												'contract' => 'Contract',
 												'parttime' => 'Part Time',
 												'freelance' => 'Freelance'
 											);										
@@ -325,7 +325,7 @@
                 <div class="row row-wrap">
                     <div class="col-md-3">
                         <a class="logo" href="index.html">
-                            <img src="img/logo-invert.png" alt="Image Alternative text" title="Image Title" />
+                            <img src="<?php echo base_url("assets/img/logo-invert.png");?>" alt="Image Alternative text" title="Image Title" />
                         </a>
                         <p class="mb20">Looking to post your vacancy for free or ooking for a job? Try Lk Jobs</p>
                         <ul class="list list-horizontal list-space">

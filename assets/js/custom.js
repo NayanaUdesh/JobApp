@@ -60,7 +60,33 @@ $('#jobsubcatauto').typeahead({
         return $.ajax({
             dataType: 'json',
             type: 'get',
-            url: '/jobapp/autocomplete/lookup?term=' + q,
+            url: '/jobapp/autocomplete/get_subcategories?term=' + q,
+            chache: true,
+            success: function(data) {
+                var result = [];
+                $.each(data, function(index, val) {
+                    result.push({
+                        value: val.value
+                    });
+                });
+                cb(result);
+            }
+        });
+    }
+});
+
+
+$('#postjobcategory').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 2,
+    limit: 20
+}, {
+    source: function(q, cb) {
+        return $.ajax({
+            dataType: 'json',
+            type: 'get',
+            url: '/jobapp/autocomplete/get_categories?term=' + q,
             chache: true,
             success: function(data) {
                 var result = [];
@@ -77,7 +103,30 @@ $('#jobsubcatauto').typeahead({
 
 
 
-
+$('#postsubcategory').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 2,
+    limit: 20
+}, {
+    source: function(q, cb) {
+        return $.ajax({
+            dataType: 'json',
+            type: 'get',
+            url: '/jobapp/autocomplete/filter_subcategories?term=' + q,
+            chache: true,
+            success: function(data) {
+                var result = [];
+                $.each(data, function(index, val) {
+                    result.push({
+                        value: val.value
+                    });
+                });
+                cb(result);
+            }
+        });
+    }
+});
 
 
 
@@ -151,10 +200,18 @@ $(document).ready(
    }
    
    
-   
-   
-   
-   
+    $( "#postjobcategory" ).blur(function() {
+      var id = $('#postjobcategory').val();
+         $.ajax({
+                type:'POST',
+                url:'/jobapp/autocomplete/get_selectedcat/',
+                data:{'id':id},
+                success:function(data){
+                    // Do nothing
+                }
+            });
+    });
+
     
 }
 	
